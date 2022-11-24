@@ -17,8 +17,9 @@
             <li><a href="#file-system" class="nav_bar_button">File Systeme</a></li>
             <li><a href="#bash" class="nav_bar_button">Bash</a></li>
             <li><a href="#nano" class="nav_bar_button">Nano</a></li>
-            <li><a href="#windows" class="nav_bar_button">Windows</a></li>
             <li><a href="#utilities" class="nav_bar_button">Utilities</a></li>
+            <li><a href="#scripting" class="nav_bar_button">Scripting</a></li>
+            <li><a href="#windows" class="nav_bar_button">Windows</a></li>
         </ul>
 		<a href="../index.html" class="homepage_button">Back to Homepage</a>
 	</nav>
@@ -174,6 +175,10 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Ctrl + C</td>
+                    <td>Make a new lign (useful when stuck).</td>
+                </tr>
+                <tr>
                     <td>pwd</td>
                     <td>Print Working Directory (file path from root to current directory).</td>
                 </tr>
@@ -303,6 +308,10 @@
                     <td>Outputs only filenames with matched results.</td>
                 </tr>
                 <tr>
+                    <td>grep ":$"</td>
+                    <td>$ matches characters at the end of a string (in this case :).</td>
+                </tr>
+                <tr>
                     <td>sed</td>
                     <td>Stream Editor : accepts standard inputs and modifies it based on an expression.</td>
                 </tr>
@@ -313,6 +322,14 @@
                 <tr>
                     <td>sed -i</td>
                     <td>Rewrites the file.</td>
+                </tr>
+                <tr>
+                    <td>sed s/'string'/'rstring'/g originFile >> destinationFile</td>
+                    <td>Replace a string in a copied file.</td>
+                </tr>
+                <tr>
+                    <td>sed -e</td>
+                    <td>Allows multiple expressions to be written after the sed command.</td>
                 </tr>
                 <tr>
                     <td>~/.bash_profile</td>
@@ -335,9 +352,26 @@
                     <td>Displays all the envirenement variables (preferences and settings).</td>
                 </tr>
                 <tr>
+                    <td>gnome-terminal</td>
+                    <td>Opens new terminal window</td>
+                </tr>
+                <tr>
+                    <td>head 'file'.txt</td>
+                    <td>Displays the firsts lines of a text file</td>
+                </tr>
+                <tr>
+                    <td>head -n 'number'</td>
+                    <td>Displays the 'number' first lines of the file.</td>
+                </tr>
+                <tr>
                     <td></td>
                     <td></td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
             </tbody>
         </table>
     </section>
@@ -503,6 +537,15 @@
                     <td>ping [option] 'target domain or IP': checks network connectivity.</td>
                 </tr>
                 <tr>
+                    <td>ping -c 'number'</td>
+                    <td>sets the number of packets to send.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
                     <td>host</td>
                     <td>host 'domain name or IP': find the IP adress for any domain name or vice versa (more <a href="https://nlp.stanford.edu/IR-book/html/htmledition/dns-resolution-1.html">here</a>.</td>
                 </tr>
@@ -514,29 +557,170 @@
                     <td></td>
                     <td></td>
                 </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <section id="scripting">
+        <h2>Scripting</h2>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <th>Command</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Starting a script :</td>
+                    <td>#!/bin/bash (on its own line).</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Saving scripts:</td>
+                    <td>In the ~/bin/ directory.</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Giving "execute" permission to a script (script.sh):</td>
+                    <td>chmod +x script.sh</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>./script.sh</td>
+                    <td>Runs the script.</td>
+                </tr>
+                <tr>
+                    <td>Setting a variable:</td>
+                    <td>variableName='value'</td>
+                </tr>
+                <tr>
+                    <td>Accessing a variable:</td>
+                    <td>$variableName</td>
+                </tr>
+                <tr>
+                    <td>conditionnal syntax:</td>
+                    <td>
+                        <pre>
+if [ condition ]
+then
+  'do this'
+else
+  'do that'
+fi
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>comparison operators:</td>
+                    <td>
+                        <ul>
+                            <li>-eq : equal</li>
+                            <li>-ne : non equal</li>
+                            <li>-le : less than or equal</li>
+                            <li>-lt : less than</li>
+                            <li>-ge : greater than or equal</li>
+                            <li>-gt : greater than</li>
+                            <li>-z : is null</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>strings:</td>
+                    <td>
+                        <ul>
+                            <li>Put strings between ""</li>
+                            <li>comparing strings:
+                                <ul>
+                                    <li>== : equal</li>
+                                    <li>!= : not equal</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>loops</td>
+                    <td>
+                        <ul>
+                            <li>for</li>
+                            <li>while</li>
+                            <li>until</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>loops syntax</td>
+                    <td>
+                        <pre>
+for/while/until [ consition ]
+do
+    'do this'
+done
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Arithmetic syntax:</td>
+                    <td>variable=$((variable + 1))</td>
+                </tr>
+                <tr>
+                    <td>asking for user input:</td>
+                    <td>
+                        <ul>
+                            <li>read 'variable name'</li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>read -a</td>
+                    <td>Make the input an array</td>
+                </tr>
+                <tr>
+                    <td><<<</td>
+                    <td>import the data on the right in the left</td>
+                </tr>
+                
+                <tr>
+                    <td>aliases</td>
+                    <td>In .bash_profile : alias keyword='./script.sh'</td>
                 </tr>
                 
             </tbody>
         </table>
     </section>
 
+    <section id="ready-made-scripts">
+        <h2>Ready made scripts</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Linux Folder Tree</td>
+                    <td><a href="https://centerkey.com/tree/">here</a></td>
+                </tr>
+                <tr>
+                    <td>Alexander Epstein Bash Snippets:</td>
+                    <td><a href="https://github.com/alexanderepstein/Bash-Snippets">here</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+            </tbod<tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                y>
+        </table>
+    </section>
 
-
+    
     <section id="windows">
         <h2>Windows</h2>
         <table class="table">
@@ -552,8 +736,8 @@
                     <td>Opens Windows command prompt.</td>
                 </tr>
                 <tr>
-                    <td>CheatSheet</td>
-                    <td><a href="https://cmdref.net/os/windows/command/index.html#windows_commands_cheat_sheet">Click here !</a></td>
+                    <td></td>
+                    <td><a href="https://cmdref.net/os/windows/command/index.html#windows_commands_cheat_sheet">Click here !</a>or <a href="http://mama.indstate.edu/users/ice/tree/">here</a></td>
                 </tr>
                 
             </tbody>
