@@ -19,6 +19,8 @@
             <li><a href="#nano" class="nav_bar_button">Nano</a></li>
             <li><a href="#utilities" class="nav_bar_button">Utilities</a></li>
             <li><a href="#scripting" class="nav_bar_button">Scripting</a></li>
+            <li><a href="#ready-made-scripts" class="nav_bar_button">Ready Made Scripts</a></li>
+            <li><a href="#shortcuts" class="nav_bar_button">Shortcuts</a></li>
             <li><a href="#windows" class="nav_bar_button">Windows</a></li>
         </ul>
 		<a href="../index.html" class="homepage_button">Back to Homepage</a>
@@ -53,8 +55,8 @@
                     <td>Print server</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>alsamixer</td>
+                    <td>Opens sound mixer.</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -175,10 +177,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Ctrl + C</td>
-                    <td>Make a new lign (useful when stuck).</td>
-                </tr>
-                <tr>
                     <td>pwd</td>
                     <td>Print Working Directory (file path from root to current directory).</td>
                 </tr>
@@ -202,7 +200,10 @@
                         </ul>
                     </td>
                 </tr>
-                
+                <tr>
+                    <td>ls >list.txt</td>
+                    <td>Creates a text file of what should be listed.</td>
+                </tr>                
                 <tr>
                     <td>cd</td>
                     <td>Change Directory (go to a given directory : full file path, name of directory's children or the parent (with ..))</td>
@@ -222,6 +223,10 @@
                 <tr>
                     <td>cat</td>
                     <td>Displays the content of the file (cat fileName).</td>
+                </tr>
+                <tr>
+                    <td>less filename</td>
+                    <td>Lets you read through the file.</td>
                 </tr>
                 <tr>
                     <td>cp source.txt destination.txt</td>
@@ -679,10 +684,17 @@ done
                     <td><<<</td>
                     <td>import the data on the right in the left</td>
                 </tr>
-                
                 <tr>
                     <td>aliases</td>
                     <td>In .bash_profile : alias keyword='./script.sh'</td>
+                </tr>
+                <tr>
+                    <td>Creating an array</td>
+                    <td>arrayName=("value1" "value2" "value3"...)</td>
+                </tr>
+                <tr>
+                    <td>Pause the script</td>
+                    <td>sleep 'number of seconds'</td>
                 </tr>
                 
             </tbody>
@@ -720,6 +732,132 @@ done
         </table>
     </section>
 
+    <section id="users&permissions">
+        <h2>Users and permissions</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Identify as administrator</td>
+                    <td>sudo -i</td>
+                </tr>
+                <tr>
+                    <td>UID and GID numbers:</td>
+                    <td>
+                        <ul>
+                            <li>Administrator (root) : 0</li>
+                            <li>System user: 1 - 999</li>
+                            <li>Normal users: 1000 - ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>Checks UID</td>
+                </tr>
+                <tr>
+                    <td>groups</td>
+                    <td>Checks GID</td>
+                </tr>
+                <tr>
+                    <td>View and modify user and group info:</td>
+                    <td>/etc/passwd and /etc/group</td>
+                </tr>
+                <tr>
+                    <td>file permission</td>
+                    <td>d(directory) or -(file) (owner)r(read)w(write)x(execute)(group)rwx(others)rwx. In numbers: r=4, w=2, x=1 (rwx=7, rw-=6,r-w=5...).</td>
+                </tr>
+                <tr>
+                    <td>flags</td>
+                    <td>u=user g=group o=others (i.e. chmod u=rwx,g=rw,o=x myFile.txt)</td>
+                </tr>
+                <tr>
+                    <td>Changing the permission</td>
+                    <td>chmod 'permission values (in number)' 'filename'</td>
+                </tr>
+                <tr>
+                    <td>Changing the owner</td>
+                    <td>chown 'user' 'fileName'</td>
+                </tr>
+                <tr>
+                    <td>Changing the group</td>
+                    <td>chgrp 'new group owner' 'fileName'</td>
+                </tr>
+                <tr>
+                    <td>sudo</td>
+                    <td>Place before a command that needs administrator privileges.</td>
+                </tr>
+                <tr>
+                    <td>Adding a user</td>
+                    <td>useradd 'userName'</td>
+                </tr>
+                <tr>
+                    <td>Adding a group</td>
+                    <td>groupadd 'groupName'</td>
+                </tr>
+                <tr>
+                    <td>Add a user to its own group</td>
+                    <td>useradd userName -g groupName</td>
+                </tr>
+                <tr>
+                    <td>Add a home directory for a new user</td>
+                    <td>useradd userName -m</td>
+                </tr>
+                <tr>
+                    <td>Modifying user or group</td>
+                    <td>usermod groupmod</td>
+                </tr>
+                <tr>
+                    <td>Delete user or group</td>
+                    <td>userdel groupdel</td>
+                </tr>
+                <tr>
+                    <td>Impersonating another user</td>
+                    <td>su userName</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <section id="shortcuts">
+        <h2>Shortcuts</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ctrl + C</td>
+                    <td>Make a new lign (useful when stuck).</td>
+                </tr>
+                <tr>
+                    <td>Up and down arrows</td>
+                    <td>navigate through the commands history.</td>
+                </tr>
+                <tr>
+                    <td>Tab</td>
+                    <td>Autocomplition.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     
     <section id="windows">
         <h2>Windows</h2>
