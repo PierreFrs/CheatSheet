@@ -76,12 +76,13 @@
 					<td>Operators</td>
 					<td>
 						<ul>
-							<li>Add (+)</li>
-							<li>Substract (-)</li>
-							<li>Multiply (*)</li>
-							<li>Divide (/)</li>
+							<li>Add (+) (+=)</li>
+							<li>Substract (-) (-=)</li>
+							<li>Multiply (*) (*=)</li>
+							<li>Divide (/) (/=)</li>
 							<li>Remainder (%)</li>
 							<li>Dot operator (.) : used to access properties and methods.</li>
+							<li>Incrementation (++), decrementation (--).</li>
 						</ul>
 					</td>
 				</tr>
@@ -129,7 +130,7 @@
 				</tr>
 				<tr>
 					<td>const</td>
-					<td>Signals that the variable cannot be reassigned a different value.</td>
+					<td>Signals that the variable cannot be reassigned a different value (a constant).</td>
 				</tr>
 				<tr>
 					<td>Mathematical assignment operators :</td>
@@ -207,173 +208,504 @@ console.log(displayText);
 	</section>
 
 
-	<!--About conditionnals-->
+<!--About conditionnals-->
 
-	<section id="conditionnals">
-		<h2>Conditionnals</h2>
+<section id="conditionnals">
+	<h2>Conditionnals</h2>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Control flow</td>
+				<td>Order in which statements are executed in a program, can be altered by control structures (i.e. conditionnals).</td>
+			</tr>
+			<tr>
+				<td>if(true or false) {}</td>
+				<td>If true : execute, if false: block.</td>
+			</tr>
+			<tr>
+				<td>if...else {}</td>
+				<td>Adds a default behavior when the statement is false.</td>
+			</tr>
+			<tr>
+				<td>Comparison statements</td>
+				<td>
+					<ul>
+						<li>Lesser than : <</li>
+						<li>Greater than : ></li>
+						<li>Lesser or equal : <=</li>
+						<li>Greater or equal : >=</li>
+						<li>Equal : ===</li>
+						<li>Not equal : !==</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Logical operators</td>
+				<td>
+					<ul>
+						<li>The 'and' operator : &&</li>
+						<li>The 'or' operator : ||</li>
+						<li>The 'not' (or 'bang') operator : !</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Thruthy values</td>
+				<td>Values that evaluate to 'true' when checked as a condition.</td>
+			</tr>
+			<tr>
+				<td>Falsy values</td>
+				<td>Values that evaluate to 'false' when checked as a condition (i.e. 0, "", '', Undifined, NaN...)</td>
+			</tr>
+			
+			<tr>
+				<td>Ternary operation</td>
+				<td>condition ? expression1 : expression2;</td>
+			</tr>
+			<tr>
+				<td>else if</td>
+				<td>Allows to add multiple statement between if... and ...else (if 'return' then 'break' is superfluous).<br>
+					i.e. :<pre>
+const size = 10;
 
-	</section>
+if (size > 100) {
+console.log('Big');
+} else if (size > 20) {
+console.log('Medium');
+} else if (size > 4) {
+console.log('Small');
+} else {
+console.log('Tiny');
+}
+// Print: Small</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>switch (compared value) {<br>
+					&nbsp;case 'value1' :<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;&nbsp;break;<br>
+					&nbsp;case 'value2' :<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;&nbsp;break;<br>
+					&nbsp;default:<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;}</td>
+				<td>i.e; :
+					<pre>
+let groceryItem = 'papaya';
 
+switch (groceryItem) {
+case 'tomato':
+console.log('Tomatoes are $0.49');
+break;
+case 'lime':
+console.log('Limes are $1.49');
+break;
+case 'papaya':
+console.log('Papayas are $1.29');
+break;
+default:
+console.log('Invalid item');
+break;
+}
 
-	<!--About functions-->
+// Prints 'Papayas are $1.29'
+					</pre>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
 
-	<section id="functions">
-		<h2>Functions</h2>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
-
-	</section>
-
-
-	<!--About scope-->
-
-	<section id="scope">
-		<h2>Scope</h2>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
-
-	</section>
-
-
-	<!--About arrays-->
-
-	<section id="arrays">
-		<h2>Arrays</h2>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
-
-	</section>
-
-
-	<!--About loops-->
-
-	<section id="loops">
-		<h2>Loops</h2>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
-
-	</section>
-
-
-	<!--About iterators-->
-
-	<section id="iterators">
-		<h2>Iterators</h2>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
-
-	</section>
+</section>
 
 
-	<!--About objects-->
+<!--About functions-->
 
-	<section id="objects">
-		<h2>Objects</h2>
+<section id="functions">
+	<h2>Functions</h2>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>How to declare a function ?</td>
+				<td>
+					<img src="../img/declaration.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>How to call a function ?</td>
+				<td>
+					<img src="../img/function execution.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>What are parameters ?</td>
+				<td>
+					<img src="../img/function_parameters.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Assigning a default parameter</td>
+				<td>
+					<pre>
+function greeting (name = 'stranger') {
+console.log(`Hello, ${name}!`)
+}
+				   
+greeting('Nick') // Output: Hello, Nick!
+greeting() // Output: Hello, stranger!</pre></td>
+			</tr>
+			<tr>
+				<td>return</td>
+				<td>
+					<img src="../img/function return.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Helper function</td>
+				<td>Function called inside another function.</td>
+			</tr>
+			<tr>
+				<td>Function expression</td>
+				<td>
+					<img src="../img/expression.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Arrow function</td>
+				<td>Replaces the keyword 'function' by '=>' after the parentheses.</td>
+			</tr>
+			<tr>
+				<td>Consise body</td>
+				<td>
+					<img src="../img/parameters.svg">
+					<img src="../img/return.svg">
+				</td>
+			</tr>		
+		</tbody>
+	</table>
 
-	</section>
+</section>
 
 
-	
+<!--About scope-->
+
+<section id="scope">
+	<h2>Scope</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Scope</td>
+				<td>Reffers to where the function is accessible within the program:<br>
+					<ul>
+						<li>Global scope: can be found anywhere in the program.</li>
+						<li>File or module scope: can be find within the file.</li>
+						<li>Function scope: accessible within the function.</li>
+						<li>Code block scope: accissible within a {...} codeblock.</li>
+						
+					</ul>
+				</td>
+			</tr>				
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About arrays-->
+
+<section id="arrays">
+	<h2>Arrays</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Array litterals</td>
+				<td>
+					<img src="../img/array literal.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Array indices</td>
+				<td>
+					<img src="../img/array indices.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Update elements</td>
+				<td>'array name'['element number'] = 'new element name';</td>
+			</tr>
+			<tr>
+				<td>Array index</td>
+				<td>Accessing an item within an array with its index : 'myArray[0]'</td>
+			</tr>
+			<tr>
+				<td>.length property</td>
+				<td>Returns the number of items in the array.</td>
+			</tr>
+			<tr>
+				<td>.push method</td>
+				<td>
+					<pre>
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+
+itemTracker.push('item 3', 'item 4');
+						 
+console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+					</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>.pop() method</td>
+				<td>Takes no argument, simply remove the last item of an array.</td>
+			</tr>
+			<tr>
+				<td>Other methods :</td>
+				<td><a href="https://www.codecademy.com/resources/docs/javascript/arrays">here</a></td>
+			</tr>
+			<tr>
+				<td>Nested array</td>
+				<td>An array inside an array.</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About loops-->
+
+<section id="loops">
+	<h2>Loops</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>'for' loop</td>
+				<td>for(initialization; stopping condition; iteration statement) {}</td>
+			</tr>
+			<tr>
+				<td>Looping through an array</td>
+				<td>Add '.length' to the stopping condition (use 'i' as variable (for 'index')).</td>
+			</tr>
+			<tr>
+				<td>Nested loop</td>
+				<td>A loop inside a loop : for () { for () {} }.</td>
+			</tr>
+			<tr>
+				<td>'while' loop</td>
+				<td>initialization (out of scope); <br>
+					while (test condition) {<br>
+					console.log();<br>
+					iteration statement;}</td>
+			</tr>
+			<tr>
+				<td>do... while</td>
+				<td>Execute a block of code at least once.</td>
+			</tr>
+			<tr>
+				<td>Break command to break out of a loop.</td>
+				<td>if (condition is met) { break; }</td>
+			</tr>
+			<tr>
+				<td>Continue command to skip a loop iteration.</td>
+				<td>if (condition is met) { continue; }</td>
+			</tr>
+			<tr>
+				<td>for...of</td>
+				<td>for (const 'single alement' of 'array) {}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About iterators-->
+
+<section id="iterators">
+	<h2>Objects</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Changing a fonction's name :</td>
+				<td>const newName = oldName  (log newName.name to find the old name).</td>
+			</tr>
+			<tr>
+				<td>Higher order function.</td>
+				<td>A function that takes another function as an argument.</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</section>
+
+
+
+
+<!--About objects-->
+
+<section id="objects">
+	<h2>Iterators</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Object</td>
+				<td>
+					<img src="../img/javascript_object.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Accessing properties with '.'</td>
+				<td>
+					<img src="../img/object dot notation.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Accessing properties with '[]'</td>
+				<td>
+					<img src="../img/object access bracket.svg" alt="">
+				</td>
+			</tr>
+			<tr>
+				<td>Propertu assignment.</td>
+				<td>
+					<img src="../img/object_property_assignment.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>'delete' operator.</td>
+				<td>placed before a property, it deletes it.</td>
+			</tr>
+			<tr>
+				<td>Method</td>
+				<td>What an object does (i.e. log.console()).</td>
+			</tr>
+			<tr>
+				<td>Nested objects</td>
+				<td>Objects inside objects (object1 {sub-object1{]}, sub-object2{}...};</td>
+			</tr>
+			<tr>
+				<td>Accessing nested objects.</td>
+				<td>object.sub-object.property</td>
+			</tr>
+			<tr>
+				<td>for...in</td>
+				<td>Looping through objects.</td>
+			</tr>
+			<tr>
+				<td>'this' keyword</td>
+				<td>Used to access properties inside an object.</td>
+			</tr>
+			<tr>
+				<td>Arrow function</td>
+				<td>'calling object ()'=> {} (defines the calling object as the defined object).</td>
+			</tr>
+			<tr>
+				<td>_property</td>
+				<td>'_' means that the property should not be altered.</td>
+			</tr>
+			<tr>
+				<td>Getters</td>
+				<td>Methods that return an internal properties of an object.</td>
+			</tr>
+			<tr>
+				<td>Setters</td>
+				<td>Reassigns values inside an object.</td>
+			</tr>
+			<tr>
+				<td>Factory function</td>
+				<td>Customizable function that returns an object.</td>
+			</tr>
+			<tr>
+				<td>Destructured Assignement</td>
+				<td>Short maner to access data inside an object (const {data] = object;)</td>
+			</tr>
+			<tr>
+				<td>Built-in methods</td>
+				<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods">here</a></td>
+			</tr>
+			<tr>
+				<td>Want to know more ?</td>
+				<td>click <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">here</a> !</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</section>
+
+
+
+
 </main>
