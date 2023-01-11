@@ -880,7 +880,7 @@ done
                     <td>Checks status.</td>
                 </tr>
                 <tr>
-                    <td>git add &ltfile name&gt</td>
+                    <td>git add &ltfilename_1&gt &ltfilename_2&gt</td>
                     <td>Adds a file to the staging area.</td>
                 </tr>
                 <tr>
@@ -888,16 +888,65 @@ done
                     <td>Commits changes.</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>git commit --amend</td>
+                    <td>Used to update a commit without creating a new one. (add --no-edit to update without changing the message)</td>
+                </tr>
+                
+                <tr>
+                    <td>git log</td>
+                    <td>Displays git commit log (press "q" to escape if stuck"</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>git log --oneline</td>
+                    <td>Displays the list of commits in one line format.</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>git log -S "keyword"</td>
+                    <td>Displays a list of commits containing a certain keyword.</td>
+                </tr>
+                <tr>
+                    <td>git log --oneline --graph</td>
+                    <td>Displays commits in a more visual way.</td>
+                </tr>
+                <tr>
+                    <td>git show HEAD</td>
+                    <td>Displays the head commit (last commit) informations.</td>
+                </tr>
+                <tr>
+                    <td>git checkout HEAD &ltfilename&gt</td>
+                    <td>Restores last commit</td>
+                </tr>
+                <tr>
+                    <td>git diff</td>
+                    <td>Shows differences between working directory and last commit</td>
+                </tr>
+                <tr>
+                    <td>git reset HEAD &ltfilename&gt</td>
+                    <td>Unstages a file from the staging area.</td>
+                </tr>
+                <tr>
+                    <td>git reset &ltcommit_SHA&gt</td>
+                    <td>Takes the 7 first numbers of the commit SHA and then change the HEAD to this commit.</td>
+                </tr>
+                <tr>
+                    <td>"."</td>
+                    <td>Stands for "all files".</td>
+                </tr>
+                <tr>
+                    <td>git stash</td>
+                    <td>Stores the working directory in a temp file.</td>
+                </tr>
+                <tr>
+                    <td>git stash pop</td>
+                    <td>Retrieve the temp stored branch.</td>
+                </tr>
+                <tr>
+                    <td>Git documentation :</td>
+                    <td><a href="https://git-scm.com/docs">here</a></td>
+                </tr>
+                <tr>
+                    <td>In VS Code :</td>
+                    <td><a href="https://code.visualstudio.com/docs/introvideos/versioncontrol">here</a></td>
                 </tr>
                 
             </tbody>
