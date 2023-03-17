@@ -12,7 +12,7 @@
 	<h1>Bootstrap CheatSheet</h1>
 	<nav id="nav">
 		<ul class="nav_bar">
-			<li><a href="#" class="nav_bar_button"></a></li>
+			<li><a href="#methods" class="nav_bar_button">Methods</a></li>
 			<li><a href="#" class="nav_bar_button"></a></li>
 			<li><a href="#" class="nav_bar_button"></a></li>
 			<li><a href="#" class="nav_bar_button"></a></li>
@@ -23,9 +23,9 @@
 </header>
 <main>	
 
-<!--About -->
+<!--About Methods-->
 
-	<section id="">
+	<section id="methods">
 		<h2></h2>
 		<table class="table">
 			<thead>
@@ -36,10 +36,29 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td></td>
-					<td></td>
+					<td>JQuerry script before script.js script</td>
+					<td>Order of loading.</td>
 				</tr>
-				
+				<tr>
+					<td>$(document).ready(() => {});</td>
+					<td>All JQuerry behavior should be written inside this method.</td>
+				</tr>
+				<tr>
+					<td>$('.class')</td>
+					<td>Targets an HTML class.</td>
+				</tr>
+				<tr>
+					<td>$('#id')</td>
+					<td>Targets an HTML id.</td>
+				</tr>
+				<tr>
+					<td>const $variableName</td>
+					<td>Best practice to put a $ before the variable name.</td>
+				</tr>
+				<tr>
+					<td>.on()</td>
+					<td>Event handler.</td>
+				</tr>
 			</tbody>
 		</table>
 	</section>
