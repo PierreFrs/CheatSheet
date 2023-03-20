@@ -143,6 +143,11 @@
 				<td>'keyup'</td>
 				<td>Listens for a key release.</td>
 			</tr>
+			<tr>
+				<td>'change'</td>
+				<td>Listens for a value change.</td>
+			</tr>
+			
 		</tbody>
 	</table>
 </section>
@@ -160,8 +165,32 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
+				<td>.css(property, value)</td>
+				<td>Targets a css property and change its value.</td>
+			</tr>
+			<tr>
+				<td>.css({key/value pairs})</td>
+				<td>Stores multiple css properties/values inside a JS object.</td>
+			</tr>
+			<tr>
+				<td>.animate({value/key object}, animation time)</td>
+				<td>Sets one or multiple properties to animate and the time it takes.</td>
+			</tr>
+			<tr>
+				<td>.addClass()</td>
+				<td>Adds a class to an HTML element.</td>
+			</tr>
+			<tr>
+				<td>.removeClass()</td>
+				<td>Remove a class from an HTML element.</td>
+			</tr>
+			<tr>
+				<td>.toggleClass()</td>
+				<td>Switches a class on & off.</td>
+			</tr>
+			<tr>
+				<td>.val()</td>
+				<td>Targets the value of an element.</td>
 			</tr>
 			<tr>
 				<td></td>
@@ -185,14 +214,29 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
+				<td>.children()</td>
+				<td>Target all the children elements of a parent element.</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
+				<td>.parent()</td>
+				<td>Targets the parent element of an element.</td>
 			</tr>
-			
+			<tr>
+				<td>.siblings()</td>
+				<td>Targets the adjacent elements of an element.</td>
+			</tr>
+			<tr>
+				<td>.closest('element name')</td>
+				<td>Targets the the closest element with the specified name up the DOM tree.</td>
+			</tr>
+			<tr>
+				<td>.next()/.prev()</td>
+				<td>Only targets the next/previous sibling.</td>
+			</tr>
+			<tr>
+				<td>.find()</td>
+				<td>Targets one or multiple elements that are descendants of a specified element.</td>
+			</tr>
 		</tbody>
 	</table>
 </section>
