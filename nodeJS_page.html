@@ -14,7 +14,7 @@
 			<ul class="nav_bar">
 				<li><a href="#terminal" class="nav_bar_button">Terminal Commands</a></li>
 				<li><a href="#modules" class="nav_bar_button">Modules</a></li>
-				<li><a href="#init" class="nav_bar_button">Node project initialization</a></li>
+				<li><a href="#init" class="nav_bar_button">Node server initialization</a></li>
 				<li><a href="#express" class="nav_bar_button">Express</a></li>
 				<li><a href="#" class="nav_bar_button"></a></li>
 			</ul>
@@ -114,10 +114,10 @@
 			</table>
 		</section>
 
-		<!-- About init -->
+		<!-- About Server init -->
 
 		<section>
-			<h2 id="init">Project initialization</h2>
+			<h2 id="init">Server initialization</h2>
 			<table class="table">
 				<thead>
 					<th><h3>Code</h3></th>
@@ -153,12 +153,79 @@
 						<td>Initializes the server port.</td>
 					</tr>
 					<tr>
+						<td>const http = require('http');<br>
+							const app = require('./app');<br>
+							app.set('port', process.env.PORT || 3000);<br>
+							const server = http.createServer(app);<br>
+							server.listen(process.env.PORT || 3000);</td>
+						<td>Initializes the server with the app.</td>
+					</tr>
+					<tr>
 						<td>npm install -g nodemon</td>
 						<td>Installs nodemon</td>
 					</tr>
 					<tr>
 						<td>nodemon server</td>
 						<td>Init Nodemon (actualises the server in real time).</td>
+					</tr>
+					<tr>
+						<td>function normalizePort(val) {<br>
+							var port = parseInt(val, 10);<br>
+						  
+							if (isNaN(port)) {<br>
+							  // named pipe <br>
+							  return val;<br>
+							}<br>
+						  <br>
+							if (port >= 0) {<br>
+							  // port number<br>
+							  return port;<br>
+							}<br>
+							<br>
+							return false;<br>
+						  }</td>
+						<td>Makes sure the port is returning a number.</td>
+					</tr>
+					<tr>
+						<td>const errorHandler = error => {</br>
+							if (error.syscall !== 'listen') {</br>
+							  throw error;</br>
+							}</br>
+							const address = server.address();</br>
+							const bind = typeof address === 'string' ? 'pipe ' + address : 'port: ' + port;</br>
+							switch (error.code) {</br>
+							  case 'EACCES':</br>
+								console.error(bind + ' requires elevated privileges.');</br>
+								process.exit(1);</br>
+								break;</br>
+							  case 'EADDRINUSE':</br>
+								console.error(bind + ' is already in use.');</br>
+								process.exit(1);</br>
+								break;</br>
+							  default:</br>
+								throw error;</br>
+							}</br>
+						    };<br>
+						    server.on('error', errorHandler);</td>
+						<td>Error handling function.</td>
+					</tr>
+					<tr>
+						<td>server.on('listening', () => {<br>
+							const address = server.address();<br>
+							const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;<br>
+							console.log('Listening on ' + bind);<br>
+						  });<br>
+						  <br>
+						  server.listen(port);</td>
+						<td>Server event listener that logs the port or canal used by the server.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -184,6 +251,82 @@
 					</thead>
 					<tbody>
 						
+						<tr>
+							<td>npm install express --save</td>
+							<td>Installs express and saves it in package.json</td>
+						</tr>
+						<tr>
+							<td>Create app.js file</td>
+							<td>The file where the app is gonna be built.</td>
+						</tr>
+						<tr>
+							<td>const express = require('express');</td>
+							<td>Imports express in app.js</td>
+						</tr>
+						<tr>
+							<td>const app = express();</td>
+							<td>Enables the creation of an express app</td>
+						</tr>
+						<tr>
+							<td>app.use((req, res) => {<br>
+								res.json({message: 'Your request has been received.'});<br>
+							})</td>
+							<td>Creates a response to the server.</td>
+						</tr>
+						<tr>
+							<td>module.exports = app;</td>
+							<td>So it can be accessed from the other files of the project (node server included).</td>
+						</tr>
+						<tr>
+							<td>app.use((req, res, next) => {<br>
+								smthg to do;<br>
+								next();<br>
+							}); </td>
+							<td>Parameter (next) and function (next()) used to send a request from middleware to middleware.</td>
+						</tr>
+						<tr>
+							<td>app.use('/api/stuff', (req, res, next) => {<br>
+							})
+							</td>
+							<td>The first argument is the url path of where the middleware is supposed to be recorded.</td>
+						</tr>
+						<tr>
+							<td>app.use((req, res, next) => {<br>
+								res.setHeader('Access-Control-Allow-Origin', '*');<br>
+								res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');<br>
+								res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');<br>
+								next();<br>
+							});</td>
+							<td>Grants API access to any user.</td>
+						</tr>
+						<tr>
+							<td>app.use(express.json());</td>
+							<td>Handle posts requests with a Content-Type application/json by extracting a json objects and sending it to the server (we can use body parser too).</td>
+						</tr>
+						<tr>
+							<td>app.get() app.post()</td>
+							<td>Function used to get or post data.</td>
+						</tr>
+						<tr>
+							<td>app.use()</td>
+							<td>Responds to both get and post requests.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
 						<tr>
 							<td></td>
 							<td></td>
