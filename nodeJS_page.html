@@ -14,9 +14,10 @@
 			<ul class="nav_bar">
 				<li><a href="#terminal" class="nav_bar_button">Terminal Commands</a></li>
 				<li><a href="#modules" class="nav_bar_button">Modules</a></li>
+				<li><a href="#package" class="nav_bar_button">package.json</a></li>
 				<li><a href="#init" class="nav_bar_button">Node server initialization</a></li>
 				<li><a href="#express" class="nav_bar_button">Express</a></li>
-				<li><a href="#" class="nav_bar_button"></a></li>
+				<li><a href="#mongoose" class="nav_bar_button">Mongoose</a></li>
 			</ul>
 			<a href="../index.html" class="homepage_button">Back to Homepage</a>
 		</nav>
@@ -110,6 +111,48 @@
 						<td></td>
 					</tr>
 					
+				</tbody>
+			</table>
+		</section>
+
+		<!-- About packege.json -->
+
+		<section>
+			<h2 id="package">package.json</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+                    <tr>
+						<td>"name": "project's name"</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>"author": "author's name"</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>"description" : "description of the project"</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>"license": "license type"</td>
+						<td>MIT, BSD... Add a LICENSE file in the project too !</td>
+					</tr>
+					<tr>
+						<td>"version": "current version of the project"</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>"keywords": ["array of keywords defining the project"]</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>"dependencies": {"package1": "package1 version", "package2": "package2 version"}</td>
+						<td>Very important, allows npm to install the packages, version as major.minor.patch, ~ to automaticaly install latest patch, ^ to automaticaly install latest minor update.</td>
+					</tr>
 				</tbody>
 			</table>
 		</section>
@@ -312,24 +355,80 @@
 							<td>Responds to both get and post requests.</td>
 						</tr>
 						<tr>
-							<td></td>
+							<td>const Thing = require('../models/Thing');</td>
+							<td>Imports the database model inside the app.</td>
+						</tr>
+						<tr>
+							<td>...req.body</td>
+							<td>Copies all the key/value pairs of the request body.</td>
+						</tr>
+						<tr>
+							<td>app.post('/api/stuff', (req, res, next) => {<br>
+								delete req.body._id;<br>
+								const thing = new Thing({<br>
+									...req.body<br>
+								});<br>
+								thing.save()<br>
+								.then(() => res.status(201).json({ message: 'Objet enregistré !'}))<br>
+								.catch(error => res.status(400).json({ error }));<br>
+							});</td>
+							<td>Snippet for a post request that parses the body of the database model object without the id and saves it in the database.</td>
+						</tr>
+						<tr>
+							<td>app.get('/api/stuff', (req, res, next) => {<br>
+								Thing.find()<br>
+								.then(things => res.status(200).json(things))<br>
+								.catch(error => res.status(400).json({ error }));<br>
+							  });</td>
+							<td>Snippet for a get request with the find() method that sends all the objects from the database.</td>
+						</tr>
+						<tr>
+							<td>app.get('/api/stuff/:id', (req, res, next) => {<br>
+								Thing.findOne({ _id: req.params.id })<br>
+								.then(thing => res.status(200).json(thing))<br>
+								.catch(error => res.status(404).json({ error }));<br>
+							});</td>
+							<td>Snippet for a get request with the findOne() method that sends only one object (identified by its _id) from the the database.</td>
+						</tr>
+						<tr>
+							<td>app.put('/api/stuff/:id', (req, res, next) => { <br>
+								Thing.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }) <br>
+								.then(() => res.status(200).json({ message: 'Objet modifié !'})) <br>
+								.catch(error => res.status(400).json({ error })); <br>
+							});</td>
+							<td>Code snippet for an update request that replace the body of an object by another one.</td>
+						</tr>
+						<tr>
+							<td>app.delete('/api/stuff/:id', (req, res, next) => { <br>
+								Thing.deleteOne({ _id: req.params.id }) <br>
+								.then(() => res.status(200).json({ message: 'Objet supprimé !'})) <br>
+								.catch(error => res.status(400).json({ error })); <br>
+							});</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>res.send("string")</td>
+							<td>Sends a string as a server's response.</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>res.sendFile(__dirname + "/public/index.html");</td>
+							<td>Sends the html file of the project as a server's response.</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>app.use("/public", express.static(__dirname + "/public"));</td>
+							<td>Serves the assets in the public folder.</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>.env file</td>
+							<td>Secret file containing parameters</td>
+						</tr>
+						<tr>
+							<td>VAR_NAME=parameter</td>
+							<td>Creates a variable in the .env file.</td>
+						</tr>
+						<tr>
+							<td>process.env.VAR_NAME</td>
+							<td>Accessing the .env variable from the app.</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -339,5 +438,226 @@
 					</tbody>
 				</table>
 			</section>
+
+		<!-- About Mongoose -->
+
+			<section>
+				<h2 id="mongoose">Mongoose</h2>
+				<table class="table">
+					<thead>
+						<th><h3>Code</h3></th>
+						<th><h3>Meaning</h3></th>
+					</thead>
+					<tbody>				
+						<tr>
+							<td>npm install mongoose</td>
+							<td>Installs Mongoose</td>
+						</tr>
+						<tr>
+							<td>const mongoose = require('mongoose')</td>
+							<td>Imports mongoose in the app file.</td>
+						</tr>
+						<tr>
+							<td>mongoose.connect('mongodb+srv://jimbob:<PASSWORD>@cluster0-pme76.mongodb.net/test?retryWrites=true&w=majority',<br>
+								{ useNewUrlParser: true,<br>
+								  useUnifiedTopology: true })<br>
+								.then(() => console.log('Successful MongoDB connection !'))<br>
+								.catch(() => console.log('Connection to MongoDB failed !'));</td>
+							<td>Connects the app to MongoDB</td>
+						</tr>
+						<tr>
+							<td>const mongoose = require('mongoose');<br><br>
+
+								const thingSchema = mongoose.Schema({<br>
+									title: { type: String, required: true },<br>
+									description: { type: String, required: true },<br>
+									imageUrl: { type: String, required: true },<br>
+									userId: { type: String, required: true },<br>
+									price: { type: String, required: true }<br>
+								});<br>
+								<br>
+								module.export = mongoose.model('Thing', thingSchema);
+							</td>
+							<td>Database model exemple in Thing.js inside models folder.</td>
+						</tr>
+						<tr>
+							<td>const Schema = mongoose.Schema;<br><br>
+
+								const personSchema = new Schema({ <br>
+								  name: { type: String, required: true}, <br>
+								  age: Number, <br>
+								  favoriteFoods: [String] <br>
+								}); </td>
+							<td>Creation of a mongoose schéma.</td>
+						</tr>
+						<tr>
+							<td>var Person = mongoose.model("Person", personSchema);<br>
+
+								var createAndSavePerson = (done) => { <br>
+								  var janeDoe = new Person({ name: "Jane Doe", age: 54, favoriteFoods: ['banana', 'apricot', 'bamburger']}); <br>
+								  janeDoe.save((err, data) => { <br>									
+									if (err) return console.error(err);<br>
+									done(null, data);<br>
+								  });<br>
+								};
+								</td>
+							<td>Creates an instance of the previous schema.</td>
+						</tr>
+						<tr>
+							<td>const createManyPeople = (arrayOfPeople, done) => { <br>
+								Person.create(arrayOfPeople, (err, people) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, people); <br>
+								}); <br>
+							  };</td>
+							<td>Create multiple instances of a schema via an array of object.</td>
+						</tr>
+						<tr>
+							<td>const findPeopleByName = (personName, done) => { <br>
+								Person.find({ name: personName }, (err, name) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, name); <br>
+								}) <br>
+							  };</td>
+							<td>Returns the given data inside a schema as an array.</td>
+						</tr>
+						<tr>
+							<td>const findOneByFood = (food, done) => { <br>
+								Person.findOne({ favoriteFoods: food }, (err, food) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, food); <br>
+								}); <br>
+							  };</td>
+							<td>Return only one element, not an array.</td>
+						</tr>
+						<tr>
+							<td>const findPersonById = (personId, done) => { <br>
+								Person.findById({ _id: personId }, (err, personId) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, personId); <br>
+								}); <br>
+							  };</td>
+							<td>Use the _id key to return an instance of a given schema.</td>
+						</tr>
+						<tr>
+							<td>const findEditThenSave = (personId, done) => { <br>
+								const foodToAdd = "hamburger"; <br>
+								Person.findById(personId, (err, person) => { <br>
+								  if(err) return console.error(err); <br>
+								  person.favoriteFoods.push(foodToAdd); <br>
+								  person.save((err, updatePerson) => { <br>
+									if(err) return console.error(err); <br>
+									done(null, updatePerson); <br>
+								  }); <br>
+								}); <br>
+							  };</td>
+							<td>Finds a schema instance by id, modifies it (.push()) and saves it.</td>
+						</tr>
+						<tr>
+							<td>const findAndUpdate = (personName, done) => { <br>
+								const ageToSet = 20; <br>
+								Person.findOneAndUpdate({ name: personName }, { age: ageToSet }, { new: true }, (err, updateDoc) => { <br>
+								  if(err) return console.error(err); <br>
+								  done(null, updateDoc); <br>
+								}); <br>
+							  };</td>
+							<td>ShortHand version of the previous function (see also findByIdAndUpdate()).</td>
+						</tr>
+						<tr>
+							<td>const removeById = (personId, done) => { <br>
+								Person.findByIdAndRemove(personId, (err, person) => { <br>
+								  if(err) return console.error(err); <br>
+								  done(null, person); <br>
+								}); <br>
+							  };</td>
+							<td>Finds a schema instance by id and deletes it (see also findOneAndRemove(), findByIdAndDelete(), findOneAndDelete()).</td>
+						</tr>
+						<tr>
+							<td>const removeManyPeople = (done) => { <br>
+								const nameToRemove = "Mary"; <br>
+								Person.deleteMany({ name: nameToRemove }, (err, name) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, name); <br>
+								}); <br>
+							  };</td>
+							<td>Deletes as many elements as necessary.</td>
+						</tr>
+						<tr>
+							<td>const queryChain = (done) => { <br>
+								const foodToSearch = "burrito";
+								Person.find({ favoriteFoods: foodToSearch}).sort({ name: 1 }).limit(2).select({ age: 0 }).exec((err, data) => { <br>
+								  if (err) return console.error(err); <br>
+								  done(null, data); <br>
+								}); <br>
+							  };</td>
+							<td>Exemple of chain search.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+								
+					</tbody>
+				</table>
+			</section>
+
+			<!-- About Routing -->
+
+		<section>
+			<h2 id="routing">Routing</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>const.router = express.Router();</td>
+						<td>Creates a router.</td>
+					</tr>
+					<tr>
+						<td>router.get()/.post()/.put()/.delete()</td>
+						<td>Creates routes from the router.</td>
+					</tr>
+					<tr>
+						<td>module.exports = router;</td>
+						<td>Exports the router module.</td>
+					</tr>
+					<tr>
+						<td>const stuffRoutes = require('./routes/router');</td>
+						<td>Imports the router module.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</section>
 	</main>
 </body>

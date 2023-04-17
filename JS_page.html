@@ -570,7 +570,7 @@ console.log(itemTracker);
 <!--About iterators-->
 
 <section id="iterators">
-	<h2>Objects</h2>
+	<h2>Iterators</h2>
 
 	<table class="table">
 		<thead>
@@ -654,7 +654,7 @@ console.log(itemTracker);
 					<img src="../img/object dot notation.svg">
 				</td>
 			</tr>
-			<tr>de bonne facture
+			<tr>
 				<td>Accessing properties with '[]'</td>
 				<td>
 					<img src="../img/object access bracket.svg" alt="">
@@ -723,8 +723,53 @@ console.log(itemTracker);
 				<td>click <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">here</a> !</td>
 			</tr>
 			<tr>
+				<td>See also prototypes</td>
 				<td></td>
-				<td></td>
+			</tr>
+			<tr>
+				<td>let flyMixin = function(obj) { <br>
+					obj.fly = function() { <br>
+					  console.log("Flying, wooosh!"); <br>
+						} <br>
+				  	}; <br>
+				  	flyMixin(bird); <br>
+					flyMixin(plane); <br>
+					bird.fly(); <br>
+					plane.fly();
+				</td>
+				<td>Mxins allow unrelated objects to share functions. Here it constructs a flyMixin mixin, then passes both bird and plane in it and finaly passes them to the console.</td>
+			</tr>
+			<tr>
+				<td>function Bird() { <br>
+					let hatchedEgg = 10; <br>
+					this.getHatchedEggCount = function() { <br> 
+					  return hatchedEgg; <br>
+					}; <br>
+				  }</td>
+				<td>In JavaScript, a function always has access to the context in which it was created. This is called closure.</td>
+			</tr>
+			<tr>
+				<td>(function () { <br>
+					console.log("A cozy nest is ready"); <br>
+				  })();</td>
+				<td>Immediately Invoked Function Expression (IIFE).</td>
+			</tr>
+			<tr>
+				<td>let funModule = (function () { <br>
+					return { <br>
+					  isCuteMixin: function(obj) { <br>
+						obj.isCute = function() { <br>
+						  return true; <br>
+						}; <br>
+					  }, <br>
+					  singMixin: function(obj) { <br>
+						obj.sing = function() { <br>
+						  console.log("Singing to an awesome tune"); <br>
+						}; <br>
+					  } <br>
+					} <br>
+				  })();</td>
+				<td>Module as an IIFE. (return an object with two mixins.</td>
 			</tr>
 			
 		</tbody>
