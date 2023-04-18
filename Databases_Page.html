@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Node.js CheatSheet</title>
+	<title>Databases CheatSheet</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">  
 </head>
@@ -12,7 +12,9 @@
 	<h1>Node.js CheatSheet</h1>
 		<nav id="nav">
 			<ul class="nav_bar">
-				<li><a href="#mongoose" class="nav_bar_button">Terminal Commands</a></li>
+				<li><a href="#mySQL" class="nav_bar_button">MySQL</a></li>
+				<li><a href="#basicSQL" class="nav_bar_button">Basic SQL</a></li>
+				<li><a href="#advancedSQL" class="nav_bar_button">Advanced SQL</a></li>
 			</ul>
 			<a href="../index.html" class="homepage_button">Back to Homepage</a>
 		</nav>
@@ -20,16 +22,302 @@
 
 	<main>
 
-		<!-- About mongoose -->
+		<!-- About MySQL -->
 
 		<section>
-			<h2 id="terminal">Terminal Commands</h2>
+			<h2 id="mySQL">MySQL</h2>
 			<table class="table">
 				<thead>
 					<th><h3>Code</h3></th>
 					<th><h3>Meaning</h3></th>
 				</thead>
 				<tbody>
+					<tr>
+						<td>mysql -u root -p</td>
+						<td>Lauches MySQL as the root user in linux or Mac.</td>
+					</tr>
+					<tr>
+						<td>mysql -u root -p database_name &lt file_name.sql</td>
+						<td>Saves a database as a .sql file.</td>
+					</tr>
+					<tr>
+						<td>mysql -u root -p database_name &lt my/path/file_name.sql</td>
+						<td>Loads a .sql file as a database.</td>
+					</tr>
+					<tr>
+						<td>exit;</td>
+						<td>Back to the terminal in standard mode.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</section>
+
+<!-- About Basic SQL -->
+
+		<section>
+			<h2 id="basicSQL">Basic SQL</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>CREATE DATABASE databasename;</td>
+						<td>Creates a database with a given name (name in lowercase).</td>
+					</tr>
+					<tr>
+						<td>USE databasename;</td>
+						<td>Tells mySQL to use a given database.</td>
+					</tr>
+					<tr>
+						<td>SHOW DATABASES;</td>
+						<td>Shows the existing databases.</td>
+					</tr>
+					<tr>
+						<td>CREATE TABLE;</td>
+						<td>Creates a table.</td>
+					</tr>
+					<tr>
+						<td>CREATE TABLE user ( <br>
+							id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, <br>
+							lastname VARCHAR(100), <br>
+							firstname VARCHAR(100), <br>
+							email VARCHAR(255) NOT NULL UNIQUE <br>
+							);</td>
+						<td>Creates a table named "user" with 4 columns.</td>
+					</tr>
+					<tr>
+						<td>PRIMARY KEY (option)</td>
+						<td>Mandatory field for the id of each element.</td>
+					</tr>
+					<tr>
+						<td>INTEGER or INT (type)</td>
+						<td>Integer numbers field.</td>
+					</tr>
+					<tr>
+						<td>NOT NULL (option)</td>
+						<td>This field cannot be null or empty.</td>
+					</tr>
+					<tr>
+						<td>AUTO_INCREMENT</td>
+						<td>Auto generated field.</td>
+					</tr>
+					<tr>
+						<td>VARCHAR(100) (type)</td>
+						<td>Text field limited to 100 characters.</td>
+					</tr>
+					<tr>
+						<td>UNIQUE (option)</td>
+						<td>The field cannot avec the same value twice.</td>
+					</tr>
+					<tr>
+						<td>CREATE TABLE aliment ( <br>
+							id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, <br>
+							nom VARCHAR(100) NOT NULL, <br>
+							marque VARCHAR(100), <br>
+							sucre FLOAT, <br>
+							calories INTEGER NOT NULL, <br>
+							graisses FLOAT, <br>
+							proteines FLOAT, <br>
+							bio BOOLEAN DEFAULT false <br>
+							);</td>
+						<td>Creates another table with 8 columns.</td>
+					</tr>
+					<tr>
+						<td>FLOAT (type)</td>
+						<td>The field will contain decimal numbers.</td>
+					</tr>
+					<tr>
+						<td>BOOLEAN (type)</td>
+						<td>Field that can take only true or false.</td>
+					</tr>
+					<tr>
+						<td>DEFAULT (option)</td>
+						<td>Declares a default value.</td>
+					</tr>
+					<tr>
+						<td>SHOW tables;</td>
+						<td>Displays the existing tables.</td>
+					</tr>
+					<tr>
+						<td>FROM tablename</td>
+						<td>Selects a table.</td>
+					</tr>
+					<tr>
+						<td>SHOW COLUMNS FROM tablename;</td>
+						<td>Displays the columns of a given table with their types and options.</td>
+					</tr>
+					<tr>
+						<td>INSERT INTO `table_name` (`column1`, `column2`, `column3`) <br>
+							VALUES ('value1', 'value2', 'value3');
+						</td>
+						<td>Select a given table, targets the columns and adds the needed values.</td>
+					</tr>
+					<tr>
+						<td>INSERT INTO `table_name` (`column1`, `column2`, `column3`) <br>
+							VALUES <br>
+							('value1', 'value2', 'value3'), <br>
+							('value1', 'value2', 'value3'), <br>
+							('value1', 'value2', 'value3');
+							</td>
+						<td>Inserts several objects in the database.</td>
+					</tr>
+					<tr>
+						<td>`tables`, `columns`, "text", "varchar", boolean, integer, float</td>
+						<td>Backticks, double quotes, no ticks.</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name;</td>
+						<td>Displays everything from a given table.</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name WHERE 'id' = '1';</td>
+						<td>Filters everything but the first row.</td>
+					</tr>
+					<tr>
+						<td>SELECT `column1`, `column2`, `column3` FROM table_name;</td>
+						<td>Displays only the given columns.</td>
+					</tr>
+					<tr>
+						<td>UPDATE `user` SET `email` = 'quentind@gmail.com' WHERE `id` = '1';</td>
+						<td>Targets the table, then the column and finaly the row with 'id'.</td>
+					</tr>
+					<tr>
+						<td>UPDATE `user` SET `email` = 'quentind@gmail.com', `car_brand` = `cadillac` WHERE `id` = '1';</td>
+						<td>Changes two columns for the same row.</td>
+					</tr>
+					<tr>
+						<td>UPDATE `table_name` SET `column` = "value";</td>
+						<td>Updates all the elements in a given column.</td>
+					</tr>
+					<tr>
+						<td>DELETE FROM `user` WHERE `id` = '2';</td>
+						<td>Deketes the second row.</td>
+					</tr>
+					<tr>
+						<td>DELETE FROM `table_name`;</td>
+						<td>Deletes everything in the table.</td>
+					</tr>
+					<tr>
+						<td>DROP TABLE `table_name`;</td>
+						<td>Remove an entire table.</td>
+					</tr>
+					<tr>
+						<td>DROP DATABASE `table_name`;</td>
+						<td>Remove an entire database.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</section>
+		<!-- About Advanced SQL -->
+
+		<section>
+			<h2 id="advancedSQL">Advanced SQL</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>SELECT * FROM table_name WHERE column_name = "value";</td>
+						<td>Displays any object containing a given value. Also works with UPDATE and DELETE.</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name WHERE column_name &lt number;</td>
+						<td>Works with any operator (&lt, &gt, &lt=, &gt=). Only workks with numbers.</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name WHERE column_name LIKE "text";</td>
+						<td>Same command but with text.</td>
+					</tr>
+					<tr>
+						<td>"%end_of_text", "beginning_of_text%", "ùmiddle_of_text%"</td>
+						<td>Referes to any text that ends a given way, starts a given way and contains a given content.</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name ORDER BY column_name ASC/DESC;</td>
+						<td>Select a column and order the different values ascending or descending (works with numbers and text).</td>
+					</tr>
+					<tr>
+						<td>SELECT * FROM table_name WHERE column_name &lt number ORDER BY column_name DESC;</td>
+						<td>Combines the filter and descending order.</td>
+					</tr>
+					<tr>
+						<td>SELECT * <br>
+							FROM aliment <br>
+							WHERE (calories &lt 90)  AND (sucre >10) <br>
+							ORDER BY calories DESC;</td>
+						<td>Command on several lines, easier to read.</td>
+					</tr>
+					<tr>
+						<td>SELECT COUNT(*) <br>
+							FROM table_name <br>
+							WHERE column_name LIKE "%end_of_text";</td>
+						<td>Returns the number of element which the column value ends a given way.</td>
+					</tr>
+					<tr>
+						<td>SELECT COUNT(column_name) <br>
+							FROM table_name <br>
+							WHERE column_name LIKE "%end_of_text";</td>
+						<td>The same but only taking a column.</td>
+					</tr>
+					<tr>
+						<td>SELECT COUNT(DISTINCT column_name) <br>
+							FROM table_name <br>
+							WHERE column_name LIKE "%contains_text%";</td>
+						<td>Counts how many items share a given text but are not the same (so we know there are no duplicates).</td>
+					</tr>
+					<tr>
+						<td>SELECT COUNT(DISTINCT column_name)  AS "alias_name"
+							FROM table_name 
+							WHERE column_name LIKE "%contains_text%";</td>
+						<td>Creates an alias.</td>
+					</tr>
+					<tr>
+						<td>AVG(), SUM(), MAX(), MIN()...</td>
+						<td>Returns the average, the sum, the max value and the min value : functions.</td>
+					</tr>
+					<tr>
+						<td>SELECT MAX(column_name)  AS "alias_name" <br>
+							FROM table_name; </td>
+						<td>Returns the max value of a given column inside a given table as an alias.</td>
+					</tr>
+					<tr>
+						<td>SELECT AVG(column_name) AS "alias_name" <br>
+							FROM table_name <br>
+							WHERE column_name &gt number;</td>
+						<td>Returns the average value of the elements superior to a given number of given column inside a given table as an alias.</td>
+					</tr>
+					<tr>
+						<td>SELECT ROUND(AVG(column_name)) AS "alias_name" <br>
+							FROM table_name <br>
+							WHERE column_name &gt number;</td>
+						<td>Same as before but rounds it at the superior integer.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
 					<tr>
 						<td></td>
 						<td></td>
@@ -50,6 +338,5 @@
 				</tbody>
 			</table>
 		</section>
-
 	</main>
 </body>
