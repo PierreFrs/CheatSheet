@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>React CheatSheet</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">  
+</head>
+<body>
+	<header>
+	<h1>React CheatSheet</h1>
+		<nav id="nav">
+			<ul class="nav_bar">
+				<li><a href="#JSX" class="nav_bar_button">JSX</a></li>
+				<li><a href="#components" class="nav_bar_button">React Components</a></li>
+				<li><a href="#terminal" class="nav_bar_button">Terminal Commands</a></li>
+				<li><a href="#" class="nav_bar_button"></a></li>
+				<li><a href="#" class="nav_bar_button"></a></li>
+				<li><a href="#" class="nav_bar_button"></a></li>
+				<li><a href="#" class="nav_bar_button"></a></li>
+			</ul>
+			<a href="../index.html" class="homepage_button">Back to Homepage</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<!-- About JSX -->
+
+		<section>
+			<h2 id="JSX">JSX</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>const 'variable name' = 'HTML element'</td>
+						<td>The way to declare an HTML variable in react.</td>
+					</tr>
+                    <tr>
+						<td>(multiline elements)</td>
+						<td>Use () if multiline HTML elements.</td>
+					</tr>
+                    <tr>
+						<td>ReactDOM.render('variable', 'targeted element')</td>
+						<td>How to actually display elements.</td>
+					</tr>
+                    <tr>
+						<td>class vs className</td>
+						<td>In JSX we use className='' instead of class=''.</td>
+					</tr>
+                    <tr>
+						<td>&ltbr /&gt</td>
+						<td>Self closing tags must include a forward slash.</td>
+					</tr>
+                    <tr>
+						<td>&ltHTML tag&gt{javascript expression}&ltHTML tag&gt</td>
+						<td>You need to surround a regular JS code around {} for it to be read as plain JS inside HTML tags.</td>
+					</tr>
+                    <tr>
+						<td>onClick = {}, onMouseOver = {}...</td>
+						<td>JSX event listeners.</td>
+					</tr>
+                    <tr>
+						<td>key=''</td>
+						<td>Used with &ltli&gt for React to remember the order.</td>
+					</tr>
+                    <tr>
+						<td>const myFunc = React.createElement()</td>
+						<td>A way to create react elements without JSX</td>
+					</tr>
+                    <tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</section>
+		
+        		<!-- About React components-->
+
+		<section>
+			<h2 id="components">React Components</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>import React from 'react';</td>
+						<td>The way to import React library.</td>
+					</tr>
+					<tr>
+						<td>import ReactDOM from 'react-dom';</td>
+						<td>The way to import the ReactDOM</td>
+					</tr>
+					<tr>
+						<td>class YourComponentNameGoesHere extends React.Component {}</td>
+						<td>The way to declare React a class component (must begin with a capital letter).</td>
+					</tr>
+					<tr>
+						<td>render() {}</td>
+						<td>Render method syntax.</td>
+					</tr>
+					<tr>
+						<td>&ltMyComponentClass /&gt</td>
+						<td>Syntax to declare a new component.</td>
+					</tr>
+					<tr>
+						<td>ReactDOM.render(<br>
+							&ltMyComponentClass /&gt,<br>
+							document.getElementById('app')<br>
+						  );</td>
+						<td>Syntax to render a component.</td>
+					</tr>
+					<tr>
+						<td>this.</td>
+						<td>Refers to an object on which this's enclosing method.</td>
+					</tr>
+					<tr>
+						<td>&ltdiv onClick={this.myFunc}&gt&lt/div&gt</td>
+						<td>Syntax to add an event handler.</td>
+					</tr>
+					<tr>
+						<td>import/export</td>
+						<td>Imports and exports different components between JS files.</td>
+					</tr>
+					<tr>
+						<td>this.props</td>
+						<td>Syntax to see a props object.</td>
+					</tr>
+					<tr>
+						<td>this.props.children</td>
+						<td>Returns the child of a JSX element or its children in an array.</td>
+					</tr>
+					<tr>
+						<td>Example.defaultProps={}</td>
+						<td>Sets a default props in the form of an object.</td>
+					</tr>
+					<tr>
+						<td>constructor(props) {<br>
+							super(props);<br>
+							this.state = { mood: 'decent' };<br>
+						  }</td>
+						<td>Syntax to declare a state (here: mood: 'decent')</td>
+					</tr>
+					<tr>
+						<td>this.state.property</td>
+						<td>Syntax to access a property of a state.</td>
+					</tr>
+					<tr>
+						<td>this.setState({updated object})</td>
+						<td>Update state.</td>
+					</tr>
+					<tr>
+						<td>this.methodName = this.methodName.bind(this)</td>
+						<td>Syntax to define an event handler (bind !!!).</td>
+					</tr>
+					<tr>
+						<td>componentDidMount()</td>
+						<td>Final method of the mounting phase (constructor(), render(), componentDidMount()).</td>
+					</tr>
+					<tr>
+						<td>componentWillUnmount()</td>
+						<td>Unmounting phase method.</td>
+					</tr>
+					<tr>
+						<td>componentDidUpdate()</td>
+						<td>Update phase method.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</section>
+		
+        		<!-- About Terminal Commands -->
+
+		<section>
+			<h2 id="terminal">Terminal Commands</h2>
+			<table class="table">
+				<thead>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>npx create-react-app 'appName'</td>
+						<td>Terminal command to create a new react app.</td>
+					</tr>
+					<tr>
+						<td>npm start</td>
+						<td>Starts the new app.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+        		<!-- -->
+
+		<section>
+			<h2 id=""></h2>
+			<table class="table">
+				<thead>
+					<th><h3></h3></th>
+					<th><h3></h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+        		<!-- -->
+
+		<section>
+			<h2 id=""></h2>
+			<table class="table">
+				<thead>
+					<th><h3></h3></th>
+					<th><h3></h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+        		<!-- -->
+
+		<section>
+			<h2 id=""></h2>
+			<table class="table">
+				<thead>
+					<th><h3></h3></th>
+					<th><h3></h3></th>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+	</main>
+</body>
+</html>

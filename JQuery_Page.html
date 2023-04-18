@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JQuery CheatSheet</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">  
+</head>
+<body>
+<header>
+	<h1>JQuery CheatSheet</h1>
+	<nav id="nav">
+		<ul class="nav_bar">
+			<li><a href="#methods" class="nav_bar_button">Methods</a></li>
+			<li><a href="#effects" class="nav_bar_button">Effects</a></li>
+			<li><a href="#mouse-events" class="nav_bar_button">Mouse Events</a></li>
+			<li><a href="#style-methods" class="nav_bar_button">Style Methods</a></li>
+			<li><a href="#DOM" class="nav_bar_button">Traversing the DOM</a></li>
+		</ul>
+		<a href="../index.html" class="homepage_button">Back to Homepage</a>
+	</nav>
+</header>
+<main>	
+
+<!--About Methods-->
+
+	<section id="methods">
+		<h2>Methods</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>JQuery script before script.js script</td>
+					<td>Order of loading.</td>
+				</tr>
+				<tr>
+					<td>$(document).ready(() => {});</td>
+					<td>All JQuery behavior should be written inside this method.</td>
+				</tr>
+				<tr>
+					<td>$('.class')</td>
+					<td>Targets an HTML class.</td>
+				</tr>
+				<tr>
+					<td>$('#id')</td>
+					<td>Targets an HTML id.</td>
+				</tr>
+				<tr>
+					<td>const $variableName</td>
+					<td>Best practice to put a $ before the variable name.</td>
+				</tr>
+				<tr>
+					<td>.on()</td>
+					<td>Event handler.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+<!--About Effects-->
+
+<section id="effects">
+	<h2>Effects</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><h3>Code</h3></th>
+				<th><h3>Meaning</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.hide()</td>
+				<td>Hides the targeted element.</td>
+			</tr>
+			<tr>
+				<td>.show()</td>
+				<td>Shows the targeted element.</td>
+			</tr>
+			<tr>
+				<td>.toggle()</td>
+				<td>Acts as a switch (without any parameter it shows or hides an element).</td>
+			</tr>
+			<tr>
+				<td>.fadeIn()/.fadeOut()</td>
+				<td>Make an element appear or disappear with a fade.</td>
+			</tr>
+			<tr>
+				<td>.fadeToggle()</td>
+				<td>Switches between fade in and fade out.</td>
+			</tr>
+			<tr>
+				<td>.slideUp()/.slideDown()</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.slideToggle()</td>
+				<td>Switches between slide up and down.</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<!--About Mouse Events-->
+
+<section id="mouse-events">
+	<h2>Mouse Events</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><h3>Code</h3></th>
+				<th><h3>Meaning</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>'click'</td>
+				<td>Listens for a mouse click.</td>
+			</tr>
+			<tr>
+				<td>'mouseenter'</td>
+				<td>Listens for the mouse to enter an element's area.</td>
+			</tr>
+			<tr>
+				<td>'mouseleave'</td>
+				<td>Listens for the mouse to leave an element's area.</td>
+			</tr>
+			<tr>
+				<td>$('.example-class').on(event, callback).on(event, callback);</td>
+				<td>Chains events.</td>
+			</tr>
+			<tr>
+				<td>$(event.currentTarget)</td>
+				<td>Only selects the element on which an event occurs.</td>
+			</tr>
+			<tr>
+				<td>'keyup'</td>
+				<td>Listens for a key release.</td>
+			</tr>
+			<tr>
+				<td>'change'</td>
+				<td>Listens for a value change.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</section>
+
+<!--About Style Methods-->
+
+<section id="style-methods">
+	<h2>Style Methods</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><h3>Code</h3></th>
+				<th><h3>Meaning</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.css(property, value)</td>
+				<td>Targets a css property and change its value.</td>
+			</tr>
+			<tr>
+				<td>.css({key/value pairs})</td>
+				<td>Stores multiple css properties/values inside a JS object.</td>
+			</tr>
+			<tr>
+				<td>.animate({value/key object}, animation time)</td>
+				<td>Sets one or multiple properties to animate and the time it takes.</td>
+			</tr>
+			<tr>
+				<td>.addClass()</td>
+				<td>Adds a class to an HTML element.</td>
+			</tr>
+			<tr>
+				<td>.removeClass()</td>
+				<td>Remove a class from an HTML element.</td>
+			</tr>
+			<tr>
+				<td>.toggleClass()</td>
+				<td>Switches a class on & off.</td>
+			</tr>
+			<tr>
+				<td>.val()</td>
+				<td>Targets the value of an element.</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			
+		</tbody>
+	</table>
+</section>
+
+<!--About Traversing the DOM-->
+
+<section id="DOM">
+	<h2>Traversing the DOM</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><h3>Code</h3></th>
+				<th><h3>Meaning</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.children()</td>
+				<td>Target all the children elements of a parent element.</td>
+			</tr>
+			<tr>
+				<td>.parent()</td>
+				<td>Targets the parent element of an element.</td>
+			</tr>
+			<tr>
+				<td>.siblings()</td>
+				<td>Targets the adjacent elements of an element.</td>
+			</tr>
+			<tr>
+				<td>.closest('element name')</td>
+				<td>Targets the the closest element with the specified name up the DOM tree.</td>
+			</tr>
+			<tr>
+				<td>.next()/.prev()</td>
+				<td>Only targets the next/previous sibling.</td>
+			</tr>
+			<tr>
+				<td>.find()</td>
+				<td>Targets one or multiple elements that are descendants of a specified element.</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+</main>
+</body>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript CheatSheet</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">  
+</head>
+<body>
+
+<header>
+	<h1>JavaScript CheatSheet</h1>
+	<nav id="nav">
+		<ul class="nav_bar">
+			<li><a href="#introduction" class="nav_bar_button">Introduction</a></li>
+			<li><a href="#conditionnals" class="nav_bar_button">Conditionnals</a></li>
+			<li><a href="#functions" class="nav_bar_button">Functions</a></li>
+			<li><a href="#scope" class="nav_bar_button">Scope</a></li>
+			<li><a href="#arrays" class="nav_bar_button">Arrays</a></li>
+			<li><a href="#loops" class="nav_bar_button">Loops</a></li>
+			<li><a href="#iterators" class="nav_bar_button">Iterators</a></li>
+			<li><a href="#objects" class="nav_bar_button">Objects</a></li>
+			<li><a href="#debugging" class="nav_bar_button">Debugging</a></li>
+			<li><a href="#interactivity" class="nav_bar_button">Interactivity</a></li>
+			<li><a href="#data" class="nav_bar_button">Data</a></li>
+		</ul>
+		<a href="../index.html" class="homepage_button">Back to Homepage</a>
+	</nav>
+</header>
+
+<main>
+
+<!--About introduction-->
+
+	<section id="introduction">
+		<h2>Introduction</h2>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Commands/Concepts</th>
+					<th>Meaning</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>console.log()</td>
+					<td>Used to log or print messages in the console.</td>
+				</tr>
+				<tr>
+					<td>//comment</td>
+					<td>For single line comments.</td>
+				</tr>
+				<tr>
+					<td>/*comment*/</td>
+					<td>For multiple lines comments.</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Data Types</td>
+					<td>
+						<ul>
+							<li>Number (any number).</li>
+							<li>String (text inside "" or '').</li>
+							<li>Boolean (True or False).</li>
+							<li>Null (intentionnal absence of value).</li>
+							<li>Undifined (a given value does not exist).</li>
+							<li>Symbol (unique identifiers).</li>
+							<li>Object (collection of related data).</li>
+							
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Operators</td>
+					<td>
+						<ul>
+							<li>Add (+) (+=)</li>
+							<li>Substract (-) (-=)</li>
+							<li>Multiply (*) (*=)</li>
+							<li>Divide (/) (/=)</li>
+							<li>Remainder (%)</li>
+							<li>Dot operator (.) : used to access properties and methods.</li>
+							<li>Incrementation (++), decrementation (--).</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Concatenation</td>
+					<td>Appending one string to another (i.e. 'string'+'string'=stringstring).</td>
+				</tr>
+				<tr>
+					<td>Property</td>
+					<td>Stored information of an object i.e. .lengthLogs reveals a string's number of caracters.</td>
+				</tr>
+				<tr>
+					<td>Methods</td>
+					<td>Actions we can perform on an object : "exemple string".methodName().<br>For a list of these methodes see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">the MDN page</a></td>
+				</tr>
+				<tr>
+					<td>Built-in objects</td>
+					<td>console, Math, Number...</td>
+				</tr>
+				<tr>
+					<th>Variable</th>
+					<th>Container for value (labels and stores data in memory).</th>
+				</tr>
+				<tr>
+					<td>What to do with variables ?</td>
+					<td>
+						<ul>
+							<li>Create a variable with a descriptive name.</li>
+							<li>Store or update information in a variable.</li>
+							<li>Reference or "get" information stored in a variable.</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Keywords</th>
+					<th>Tokens that have a special meaning, the list <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords" target="_blank">here</a>.</th>
+				</tr>
+				<tr>
+					<td>var</td>
+					<td>Declares or creates a new variable.</td>
+				</tr>
+				<tr>
+					<td>let</td>
+					<td>Signals that the variable can be reassigned a different value (mutable).</td>
+				</tr>
+				<tr>
+					<td>const</td>
+					<td>Signals that the variable cannot be reassigned a different value (a constant).</td>
+				</tr>
+				<tr>
+					<td>Mathematical assignment operators :</td>
+					<td><pre>
+let w = 4;
+w = w + 1;
+console.log(w); // Output: 5
+					</pre>
+					can be written:
+					<pre>
+let w = 4;
+w += 1;
+console.log(w); // Output: 5
+					</pre>
+					as for:
+					<pre>
+let x = 20;
+x -= 5; // Can be written as x = x - 5
+console.log(x); // Output: 15
+ 
+let y = 50;
+y *= 2; // Can be written as y = y * 2
+console.log(y); // Output: 100
+ 
+let z = 8;
+z /= 2; // Can be written as z = z / 2
+console.log(z); // Output: 4
+					</pre></td>
+				</tr>
+				<tr>
+					<td>Increment operator (++) and decrement operator (--)</td>
+					<td>increase (++) or decrease (--) the value of a variable by 1.</td>
+				</tr>
+				<tr>
+					<td>Template litteral (string interpolation)</td>
+					<td>
+						<pre>
+const myPet = 'armadillo';
+console.log(`I own a pet ${myPet}.`);
+// Output: I own a pet armadillo.
+						</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>typeof</td>
+					<td>Checks the data type:
+						<pre>
+							const unknown1 = 'foo';
+							console.log(typeof unknown1); // Output: string
+							 
+							const unknown2 = 10;
+							console.log(typeof unknown2); // Output: number
+							 
+							const unknown3 = true; 
+							console.log(typeof unknown3); // Output: boolean
+						</pre>
+					</td>
+				</tr>
+				<tr>
+					<td>String concatenation</td>
+					<td>
+						<pre>
+let service = 'credit card';
+let month = 'May 30th'; 
+let displayText = 'Your ' + service  + ' bill is due on ' +  month + '.';
+
+console.log(displayText);
+// Prints: Your credit card bill is due on May 30th.
+						</pre>
+					</td>
+				</tr>				
+			</tbody>
+		</table>
+
+	</section>
+
+
+<!--About conditionnals-->
+
+<section id="conditionnals">
+	<h2>Conditionnals</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Control flow</td>
+				<td>Order in which statements are executed in a program, can be altered by control structures (i.e. conditionnals).</td>
+			</tr>
+			<tr>
+				<td>if(true or false) {}</td>
+				<td>If true : execute, if false: block.</td>
+			</tr>
+			<tr>
+				<td>if...else {}</td>
+				<td>Adds a default behavior when the statement is false.</td>
+			</tr>
+			<tr>
+				<td>Comparison statements</td>
+				<td>
+					<ul>
+						<li>Lesser than : <</li>
+						<li>Greater than : ></li>
+						<li>Lesser or equal : <=</li>
+						<li>Greater or equal : >=</li>
+						<li>Equal : === (strict), == (simple)</li>
+						<li>Not equal : !==</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Logical operators</td>
+				<td>
+					<ul>
+						<li>The 'and' operator : &&</li>
+						<li>The 'or' operator : ||</li>
+						<li>The 'not' (or 'bang') operator : !</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Thruthy values</td>
+				<td>Values that evaluate to 'true' when checked as a condition.</td>
+			</tr>
+			<tr>
+				<td>Falsy values</td>
+				<td>Values that evaluate to 'false' when checked as a condition (i.e. 0, "", '', Undifined, NaN...)</td>
+			</tr>
+			
+			<tr>
+				<td>Ternary operation</td>
+				<td>condition ? expression1 : expression2;</td>
+			</tr>
+			<tr>
+				<td>else if</td>
+				<td>Allows to add multiple statement between if... and ...else (if 'return' then 'break' is superfluous).<br>
+					i.e. :<pre>
+const size = 10;
+
+if (size > 100) {
+console.log('Big');
+} else if (size > 20) {
+console.log('Medium');
+} else if (size > 4) {
+console.log('Small');
+} else {
+console.log('Tiny');
+}
+// Print: Small</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>switch (compared value) {<br>
+					&nbsp;case 'value1' :<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;&nbsp;break;<br>
+					&nbsp;case 'value2' :<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;&nbsp;break;<br>
+					&nbsp;default:<br>
+					&nbsp;&nbsp;console.log();<br>
+					&nbsp;}</td>
+				<td>i.e; :
+					<pre>
+let groceryItem = 'papaya';
+
+switch (groceryItem) {
+case 'tomato':
+console.log('Tomatoes are $0.49');
+break;
+case 'lime':
+console.log('Limes are $1.49');
+break;
+case 'papaya':
+console.log('Papayas are $1.29');
+break;
+default:
+console.log('Invalid item');
+break;
+}
+
+// Prints 'Papayas are $1.29'
+					</pre>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About functions-->
+
+<section id="functions">
+	<h2>Functions</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>How to declare a function ?</td>
+				<td>
+					<img src="../img/declaration.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>How to call a function ?</td>
+				<td>
+					<img src="../img/function execution.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>What are parameters ?</td>
+				<td>
+					<img src="../img/function_parameters.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Assigning a default parameter</td>
+				<td>
+					<pre>
+function greeting (name = 'stranger') {
+console.log(`Hello, ${name}!`)
+}
+				   
+greeting('Nick') // Output: Hello, Nick!
+greeting() // Output: Hello, stranger!</pre></td>
+			</tr>
+			<tr>
+				<td>return</td>
+				<td>
+					<img src="../img/function return.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Helper function</td>
+				<td>Function called inside another function.</td>
+			</tr>
+			<tr>
+				<td>Function expression</td>
+				<td>
+					<img src="../img/expression.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Arrow function</td>
+				<td>Replaces the keyword 'function' by '=>' after the parentheses.</td>
+			</tr>
+			<tr>
+				<td>Consise body</td>
+				<td>
+					<img src="../img/parameters.svg">
+					<img src="../img/return.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>...arrayName</td>
+				<td>REST operator : passes arguments into a function</td>
+			</tr>		
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About scope-->
+
+<section id="scope">
+	<h2>Scope</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Scope</td>
+				<td>Reffers to where the function is accessible within the program:<br>
+					<ul>
+						<li>Global scope: can be found anywhere in the program.</li>
+						<li>File or module scope: can be find within the file.</li>
+						<li>Function scope: accessible within the function.</li>
+						<li>Code block scope: accissible within a {...} codeblock.</li>
+						
+					</ul>
+				</td>
+			</tr>				
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About arrays-->
+
+<section id="arrays">
+	<h2>Arrays</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Array litterals</td>
+				<td>
+					<img src="../img/array literal.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Array indices</td>
+				<td>
+					<img src="../img/array indices.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Update elements</td>
+				<td>'array name'['element number'] = 'new element name';</td>
+			</tr>
+			<tr>
+				<td>Array index</td>
+				<td>Accessing an item within an array with its index : 'myArray[0]'</td>
+			</tr>
+			<tr>
+				<td>.length property</td>
+				<td>Returns the number of items in the array.</td>
+			</tr>
+			<tr>
+				<td>.push method</td>
+				<td>
+					<pre>
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+
+itemTracker.push('item 3', 'item 4');
+						 
+console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+					</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>.pop() method</td>
+				<td>Takes no argument, simply remove the last item of an array.</td>
+			</tr>
+			<tr>
+				<td>Other methods :</td>
+				<td><a href="https://www.codecademy.com/resources/docs/javascript/arrays">here</a></td>
+			</tr>
+			<tr>
+				<td>Nested array</td>
+				<td>An array inside an array.</td>
+			</tr>
+			<tr>
+				<td>...arrayName</td>
+				<td>Spread operator : adds elements of an array inside another array or function...</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About loops-->
+
+<section id="loops">
+	<h2>Loops</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>'for' loop</td>
+				<td>for(initialization; stopping condition; iteration statement) {}</td>
+			</tr>
+			<tr>
+				<td>Looping through an array</td>
+				<td>Add '.length' to the stopping condition (use 'i' as variable (for 'index')).</td>
+			</tr>
+			<tr>
+				<td>Nested loop</td>
+				<td>A loop inside a loop : for () { for () {} }.</td>
+			</tr>
+			<tr>
+				<td>'while' loop</td>
+				<td>initialization (out of scope); <br>
+					while (test condition) {<br>
+					console.log();<br>
+					iteration statement;}</td>
+			</tr>
+			<tr>
+				<td>do... while</td>
+				<td>Execute a block of code at least once.</td>
+			</tr>
+			<tr>
+				<td>Break command to break out of a loop.</td>
+				<td>if (condition is met) { break; }</td>
+			</tr>
+			<tr>
+				<td>Continue command to skip a loop iteration.</td>
+				<td>if (condition is met) { continue; }</td>
+			</tr>
+			<tr>
+				<td>for...of</td>
+				<td>for (const 'single alement' of 'array) {}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+
+<!--About iterators-->
+
+<section id="iterators">
+	<h2>Iterators</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Changing a fonction's name :</td>
+				<td>const newName = oldName  (log newName.name to find the old name).</td>
+			</tr>
+			<tr>
+				<td>Higher order function.</td>
+				<td>A function that takes another function as an argument.</td>
+			</tr>
+			<tr>
+				<td>.forEach()</td>
+				<td>Loops through an array in order.</td>
+			</tr>
+			<tr>
+				<td>.map()</td>
+				<td>Loops through an array and returns an array.</td>
+			</tr>
+			<tr>
+				<td>.filter()</td>
+				<td>Returns a new array with the elements that returns true.</td>
+			</tr>
+			<tr>
+				<td>.findIndex()</td>
+				<td>Find the index of the first element that corresponds the given callback function (-1 if nothing).</td>
+			</tr>
+			<tr>
+				<td>.reduce()</td>
+				<td>Returns a single value after iterating through an array. Can take an optional second parameter to set the initial value.</td>
+			</tr>
+			<tr>
+				<td>.some()</td>
+				<td>Returns true if it finds at least one element that corresponds the given callback function.</td>
+			</tr>
+			<tr>
+				<td>.every()</td>
+				<td>Check a condition on every elements and returns a boolean.</td>
+			</tr>
+			<tr>
+				<td>More itaretion method :</td>
+				<td><a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods>Here !</a></td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</section>
+
+
+
+
+<!--About objects-->
+
+<section id="objects">
+	<h2>Iterators</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concept</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Object</td>
+				<td>
+					<img src="../img/javascript_object.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Accessing properties with '.'</td>
+				<td>
+					<img src="../img/object dot notation.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>Accessing properties with '[]'</td>
+				<td>
+					<img src="../img/object access bracket.svg" alt="">
+				</td>
+			</tr>
+			<tr>
+				<td>Property assignment.</td>
+				<td>
+					<img src="../img/object_property_assignment.svg">
+				</td>
+			</tr>
+			<tr>
+				<td>'delete' operator.</td>
+				<td>placed before a property, it deletes it.</td>
+			</tr>
+			<tr>
+				<td>Method</td>
+				<td>What an object does (i.e. log.console()).</td>
+			</tr>
+			<tr>
+				<td>Nested objects</td>
+				<td>Objects inside objects (object1 {sub-object1{]}, sub-object2{}...};</td>
+			</tr>
+			<tr>
+				<td>Accessing nested objects.</td>
+				<td>object.sub-object.property</td>
+			</tr>
+			<tr>
+				<td>for...in</td>
+				<td>Looping through objects.</td>
+			</tr>
+			<tr>
+				<td>'this' keyword</td>
+				<td>Used to access properties inside an object.</td>
+			</tr>
+			<tr>
+				<td>Arrow function</td>
+				<td>'calling object ()'=> {} (defines the calling object as the defined object).</td>
+			</tr>
+			<tr>
+				<td>_property</td>
+				<td>'_' means that the property should not be altered.</td>
+			</tr>
+			<tr>
+				<td>Getters</td>
+				<td>Methods that return an internal properties of an object.</td>
+			</tr>
+			<tr>
+				<td>Setters</td>
+				<td>Reassigns values inside an object.</td>
+			</tr>
+			<tr>
+				<td>Factory function</td>
+				<td>Customizable function that returns an object.</td>
+			</tr>
+			<tr>
+				<td>Destructured Assignement</td>
+				<td>Short maner to access data inside an object (const {data] = object;)</td>
+			</tr>
+			<tr>
+				<td>Built-in methods</td>
+				<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods">here</a></td>
+			</tr>
+			<tr>
+				<td>Want to know more ?</td>
+				<td>click <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">here</a> !</td>
+			</tr>
+			<tr>
+				<td>See also prototypes</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>let flyMixin = function(obj) { <br>
+					obj.fly = function() { <br>
+					  console.log("Flying, wooosh!"); <br>
+						} <br>
+				  	}; <br>
+				  	flyMixin(bird); <br>
+					flyMixin(plane); <br>
+					bird.fly(); <br>
+					plane.fly();
+				</td>
+				<td>Mxins allow unrelated objects to share functions. Here it constructs a flyMixin mixin, then passes both bird and plane in it and finaly passes them to the console.</td>
+			</tr>
+			<tr>
+				<td>function Bird() { <br>
+					let hatchedEgg = 10; <br>
+					this.getHatchedEggCount = function() { <br> 
+					  return hatchedEgg; <br>
+					}; <br>
+				  }</td>
+				<td>In JavaScript, a function always has access to the context in which it was created. This is called closure.</td>
+			</tr>
+			<tr>
+				<td>(function () { <br>
+					console.log("A cozy nest is ready"); <br>
+				  })();</td>
+				<td>Immediately Invoked Function Expression (IIFE).</td>
+			</tr>
+			<tr>
+				<td>let funModule = (function () { <br>
+					return { <br>
+					  isCuteMixin: function(obj) { <br>
+						obj.isCute = function() { <br>
+						  return true; <br>
+						}; <br>
+					  }, <br>
+					  singMixin: function(obj) { <br>
+						obj.sing = function() { <br>
+						  console.log("Singing to an awesome tune"); <br>
+						}; <br>
+					  } <br>
+					} <br>
+				  })();</td>
+				<td>Module as an IIFE. (return an object with two mixins.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</section>
+
+<!--About debugging-->
+
+<section id="debugging">
+	<h2>Debugging</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Error types</td>
+				<td><a href=https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Error>MDN Doc</a></td>
+			</tr>
+			<tr>
+				<td>Read error messages</td>
+				<td>File, then line, the message error, try to fix it, and do it again.</td>
+			</tr>
+			<tr>
+				<td>Use console.log</td>
+				<td>Print the console after each piece of logic (variables, values, arguments...) and when it works comment it out (//).</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</section>
+
+<!--About interactivity-->
+
+<section id="interactivity">
+	<h2>Interactivity</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>&ltscript&gt</td>
+				<td>Adds a script to the HTML file.</td>
+			</tr>
+			<tr>
+				<td>&ltscript src=""&gt</td>
+				<td>Links a JS page to the HTML.</td>
+			</tr>
+			<tr>
+				<td>&ltscript defer&gt</td>
+				<td>Delays the JS element loading to the end of the page.</td>
+			</tr>
+			<tr>
+				<td>&lt&script asyncgt</td>
+				<td>Delays the JS element loading</td>
+			</tr>
+			<tr>
+				<td>Document access properties</td>
+				<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">here</a></td>
+			</tr>
+			<tr>
+				<td>&lt&gt</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>document.innerHTML</td>
+				<td>Accesses the HTML of a certain element.</td>
+			</tr>
+			<tr>
+				<td>document.querySelector('selector')</td>
+				<td>Accesses a CSS selector.</td>
+			</tr>
+			<tr>
+				<td>document.getElementById('id')</td>
+				<td>Accesses an element by precising its id.</td>
+			</tr>
+			<tr>
+				<td>document.getElementByClassName('class')</td>
+				<td>Returns an array of elements.</td>
+			</tr>
+			<tr>
+				<td>document.getElementByTagName('tag')</td>
+				<td>Returns an array of elements.</td>
+			</tr>
+			<tr>
+				<td>.style</td>
+				<td>Accesses the inline style of an element (element.style.property).</td>
+			</tr>
+			<tr>
+				<td>CSS to JS convertion</td>
+				<td><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index'>here</a></td>
+			</tr>
+			<tr>
+				<td>.parentNode or .children</td>
+				<td>Returns the parent element or the children elements in the form of an array.</td>
+			</tr>
+			<tr>
+				<td>.createElement('element')</td>
+				<td>Creates a new empty element.</td>
+			</tr>
+			<tr>
+				<td>.appendChild(parent element)</td>
+				<td>Assign a new child element to a preexisting element.</td>
+			</tr>
+			<tr>
+				<td>.removeChild(child element to remove)</td>
+				<td>Removes an element from a parent.</td>
+			</tr>
+			<tr>
+				<td>.hidden = true or false</td>
+				<td>Hides or displays an element.</td>
+			</tr>
+			<tr>
+				<td>.onclick</td>
+				<td>Assigns a function to run when a click event happens to an element</td>
+			</tr>
+			<tr>
+				<td>.addEventListener('event', function())</td>
+				<td>Adds an event.</td>
+			</tr>
+			<tr>
+				<td>.onevent = function()</td>
+				<td>Same as above, different syntax</td>
+			</tr>
+			<tr>
+				<td>.removeEventListener('event', function())</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Event list :</td>
+				<td><a href='https://developer.mozilla.org/en-US/docs/Web/Events'>here !</a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</section>
+
+<!--About data-->
+
+<section id="data">
+	<h2>Data</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepts</th>
+				<th>Meaning</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Data types</td>
+				<td>CSV, XML, JSON, spreadsheets, SQL</td>
+			</tr>
+			<tr>
+				<td>JSON syntax</td>
+				<td> 
+					<ul>
+						<li>4 primitives : numbers, strings, booleans and null</li>
+						<li>2 structures : objects and arrays</li>
+						<li>"" only</li>
+					</ul> 
+				</td>
+			</tr>
+			<tr>
+				<td>await fetch("fileName.json")</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+</main>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 CheatSheet</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">  
+</head>
+<body>
+<header>
+	<h1>CSS3 CheatSheet</h1>
+	<nav id="nav">
+		<ul class="nav_bar">
+			<li><a href="#syntax&selectors" class="nav_bar_button">Syntax and Selectors</a></li>
+			<li><a href="#visualrules" class="nav_bar_button">Visual Rules</a></li>
+			<li><a href="#boxmodel" class="nav_bar_button">The Box Model</a></li>
+			<li><a href="#display&positionning" class="nav_bar_button">Display and Positionning</a></li>
+			<li><a href="#colors" class="nav_bar_button">Colors</a></li>
+			<li><a href="#typography" class="nav_bar_button">Typography</a></li>
+			<li><a href="#animations&transitions" class="nav_bar_button">Animations and Transitions</a></li>
+			<li><a href="#tips&tricks" class="nav_bar_button">Tips and Tricks</a></li>
+		</ul>
+		<a href="../index.html" class="homepage_button">Back to Homepage</a>
+	</nav>
+</header>
+<main>	
+
+<!--About Syntax and Selectors-->
+
+	<section id="syntax&selectors">
+		<h2>Syntax and Selectors</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><h3>Code</h3></th>
+					<th><h3>Meaning</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>&ltlink href="" rel="" type=""&gt</td>
+					<td>Links a CSS stylesheet to an HTML document.</td>
+				</tr>
+				<tr>
+					<td>&ltstyle&gt</td>
+					<td>Allows to write CSS inside an HTML file.</td>
+				</tr>
+				<tr>
+					<td>style=""</td>
+					<td>Allows inline CSS styling inside an HTML file.</td>
+				</tr>
+				<tr>
+					<td>any tag</td>
+					<td>Type selector.</td>
+				</tr>
+				<tr>
+					<td>.stuff</td>
+					<td>Class selector.</td>
+				</tr>
+				<tr>
+					<td>.stuff.stuff</td>
+					<td>Selects a two word class.</td>
+				</tr>
+				<tr>
+					<td>#stuff</td>
+					<td>ID selector.</td>
+				</tr>
+				<tr>
+					<td>stuff, stuff</td>
+					<td>Used to group CSS selectors.</td>
+				</tr>
+				<tr>
+					<td>stuffstuff</td>
+					<td>Chains multiple selectors (ex: h2.banner {} = selects the h2 types that have a .banner class).</td>
+				</tr>
+				<tr>
+					<td>ID>class>type</td>
+					<td>Selectors hierarchy.</td>
+				</tr>
+				<tr>
+					<td>stuff stuff</td>
+					<td>Descendant selector : matches the element that are descended from the previous selector (ex: p ol {} = only the ol that descend from p will be selected).</td>
+				</tr>
+				<tr>
+					<td>stuff + stuff</td>
+					<td>Selects two adjacent siblings</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><h3>Pseudo-class selectors</h3></th>
+					<th><h3>Meaning</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>:link</td>
+					<td>Styling before visiting.</td>
+				</tr>
+				<tr>
+					<td>:visited</td>
+					<td>Styling after visiting.</td>
+				</tr>
+				
+				<tr>
+					<td>:hover</td>
+					<td>Replace a rule by another one when hovering an element.</td>
+				</tr>
+				<tr>
+					<td>:active</td>
+					<td>Styling while activating.</td>
+				</tr>
+				<tr>
+					<td>element:nth-child(integer, even, odd or formula)</td>
+					<td>Selects the nth child element of the targeted type's parent.</td>
+				</tr>
+				<tr>
+					<td>element:nth-of-type(integer, even, odd or formula)</td>
+					<td>Selects the nth element of the targeted type only.</td>
+				</tr>
+				<tr>
+					<td>::before or ::after</td>
+					<td>Do an action before or after the selected element.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+<!--About Visual Rules-->
+
+	<section id="visualrules">
+		<h2>Visual Rules</h2>
+		<table class="table">
+			<thead>
+				<th><h3>Declaration</h3></th>
+				<th><h3>Meaning	and/or values</h3></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>font:</td>
+					<td>See <a href="#typography">Typography</a></td>
+				</tr>
+				<tr>
+					<td>text-align:</td>
+					<td>left, right, center, justify</td>
+				</tr>
+				<tr>
+					<td>vertical-align:</td>
+					<td>baseline, top, middle, bottom, sub, text-top<br>
+					vertical alignment of an inline, inline-block or table-cell box</td>
+				</tr>
+				<tr>
+					<td>text-decoration:</td>
+					<td>
+						<ul>
+							<li>line: underline/overline/line-through...</li>
+							<li>color</li>
+							<li>style: solid, wavy, dashed...</li>
+							<li>thickness</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>color:</td>
+					<td>Sets foreground text/element color</td>
+				</tr>
+				<tr>
+					<td>background-color:</td>
+					<td>Sets background color of the element.</td>
+				</tr>
+				<tr>
+					<td>linear gradient ()</td>
+					<td>Creates an image consisting in a progressive transition.</td>
+				</tr>
+				<tr>
+					<td>opacity:</td>
+					<td>0=transparent 1=opaque.</td>
+				</tr>
+				<tr>
+					<td>box-shadow:</td>
+					<td>top right bottom left color</td>
+				</tr>
+				<tr>
+					<td>text-shadow:</td>
+					<td>top right bottom left color</td>
+				</tr>
+				<tr>
+					<td>background-image:</td>
+					<td>Sets a background picture</td>
+				</tr>
+				<tr>
+					<td>url("")</td>
+					<td>Wraps resource URL (image</td>
+				</tr>
+				<tr>
+					<td>background-blend-mode:</td>
+					<td>blends image w/ background like explained <a href="https://css-tricks.com/almanac/properties/b/background-blend-mode/">here</a>.</td>
+				</tr>
+				<tr>
+					<td>cursor:</td>
+					<td>help, wait, not-allowed, zoom-in, grab...<br>
+					url() x y</td>
+				</tr>
+				<tr>
+					<td>list-style:</td>
+					<td>
+						<ul>
+							<li>-type:(square, circle, decimal...)</li>
+							<li>-image:(url or none)</li>
+							<li>-position:(inside or outside)</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>transform:</td>
+					<td>translate, rotate, scale...</td>
+				</tr>
+				<tr>
+					<td>transition:</td>
+					<td>Target the rule then add values</td>
+				</tr>
+				<tr>
+					<td>!important</td>
+					<td>Override other declarations (is set after the value).</td>
+				</tr>
+				<tr>
+					<td>content:""</td>
+					<td>Adds written content.</td>
+				</tr>
+				<tr>
+					<td>white-space:</td>
+					<td><ul>
+						<li>normal (default)</li>
+						<li>nowrap (no line break)</li>
+						<li>pre (breaks at br and newline characters)</li>
+						<li>pre-wrap (breaks at br, newline characters and to fill line boxes)</li>
+						<li>pre-line (same as before but white spaces are collapsed)</li>
+						<li>break-spaces (same as pre-wrap but</li>
+					</ul></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+<!--About the Box Model-->
+
+	<section id="boxmodel">
+		<h2>The Box Model</h2>
+		<table class="table">
+			<thead>
+				<th><h3>Declaration</h3></th>
+				<th><h3>Value/Meaning</h3></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>padding:</td>
+					<td><ul>
+						<li>-top, -right, -bottom, -left</li>
+						<li>px, em, %</li>
+						<li>inherit, initial, revert, revert-layer, unset</li>
+					</ul></td>
+				</tr>
+				<tr>
+					<td>border:</td>
+					<td>
+						<ul>
+							<li>width (thin, medium, thick, px, em, rem, %...)</li>
+							<li>style (none, dotted, inset, dashed...)</li>
+							<li>color</li>
+							<li>radius (px, em, %)</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>border-collapse:</td>
+					<td>collapse (fusion of borders) or separate (default).</td>
+				</tr>
+				<tr>
+					<td>outline:</td>
+					<td>The same as borders but don't take space.</td>
+				</tr>
+				<tr>
+					<td>margin:</td>
+					<td>Same as padding + auto (horizontally centers an element).</td>
+				</tr>
+				<tr>
+					<td>width:, height:</td>
+					<td>px, em, %...</td>
+				</tr>
+				<tr>
+					<td>max-/min- (width/height)</td>
+					<td>px, em, %...</td>
+				</tr>
+				<tr>
+					<td>box-sizing:</td>
+					<td>border-box</td>
+				</tr>
+				<tr>
+					<td>overflow:</td>
+					<td>visible, hidden, scroll</td>
+				</tr>
+				<tr>
+					<td>visibility:</td>
+					<td>hidden</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+<!--About Display and Positionning-->
+
+	<section id="display&positionning">
+		<h2>Display and Positionning</h2>
+		<table class="table">
+			<thead>
+				<th><h3>Declaration</h3></th>
+				<th><h3>Value/Meaning</h3></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>z-index:</td>
+					<td>integer (+/-)</td>
+				</tr>
+				<tr>
+					<td>position:</td>
+					<td>
+						<ul>
+							<li>static (default)</li>
+							<li>relative (from the top:, right:, bottom:, left: relatively to its position)</li>
+							<li>absolute (on the top:, right:, bottom:, left: of it's closest parent, out of flow)</li>
+							<li>fixed (top:, right:, bottom:, left: of the screen, out of the flow)</li>
+							<li>sticky (sticks to the screens when reaches position top:, right:, bottom:, left:, out of the flow)</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>display:</td>
+					<td>inline, block, inline-block</td>
+				</tr>
+				<tr>
+					<td>float:</td>
+					<td>top, left, right, bottom (width must be specified, out of flow)</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+<!--About Colors-->
+
+	<section id="colors">
+		<h2>Colors</h2>
+		<table class="table">
+			<thead>
+				<th><h3>Declaration</h3></th>
+				<th><h3>Value/Meaning</h3></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Keywrords</td>
+					<td>White, black, yellow...</td>
+				</tr>
+				<tr>
+					<td>Hexadecimal</td>
+					<td>#00f6o5, #67h</td>
+				</tr>
+				<tr>
+					<td>HSL(A) (hue saturation lightness)</td>
+					<td>integer (0-360), %, %</td>
+				</tr>
+				<tr>
+					<td>RGB(A)</td>
+					<td>value 1, value 2, value 3<br>(all between 0-255)</td>
+				</tr>
+				<tr>
+					<td>Alpha value (A)</td>
+					<td>0 (transparent) - 1 (opaque)</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</section>
+
+<!--About Typography-->
+
+	<section id="typography">
+		<h2>Typography</h2>
+		<table class="table">
+			<thead>
+				<th><h3>Declaration</h3></th>
+				<th><h3>Value/Meaning</h3></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>font-family:</td>
+					<td>Specifies a typeface</td>
+				</tr>
+				<tr>
+					<td>font-size:</td>
+					<td>
+						<ul>
+							<li>xx-small->xxx-large</li>
+							<li>smaller, larger</li>
+							<li>px, em</li>
+							<li>%</li>
+							<li>math</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>font-weight:</td>
+					<td>
+						<ul>
+						<li>Normal, bold</li>
+						<li>between 100 and 900</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>font-style:</td>
+					<td>normal, italic, oblique, oblique (-90 - 90)deg</td>
+				</tr>
+				<tr>
+					<td>text-transform:</td>
+					<td>none, capitalize, uppercase, lowercase, full-width, full-size-kana</td>
+				</tr>
+				<tr>
+					<td>@font-face {}</td>
+					<td>font-family:<br>
+						src: url() format()</td>
+				</tr>
+				<tr>
+					<td>Fallback Fonts</td>
+					<td>Safe fonts</td>
+				</tr>
+				<tr>
+					<td>line-height:</td>
+					<td>unitless or unitless (unitless is more responsive)</td>
+				</tr>
+				<tr>
+					<td>&ltlink href="font url or path"&gt</td>
+					<td>Links a font inside an HTML document.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<!--About Animations &transitions-->
+	<section id="animations&transitions">
+		<h2>Animations and Transitions</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Declaration</th>
+					<th>Value/Meaning</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>transition-property:</td>
+					<td>States what property we want to transition.</td>
+				</tr>
+				<tr>
+					<td>transition-duration:</td>
+					<td>Specifies the duration of the transition.</td>
+				</tr>
+				<tr>
+					<td>transition-timing-function:</td>
+					<td>Describes the pace of the transition (<a target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function</a>)</td>
+				</tr>
+				<tr>
+					<td>transition-delay:</td>
+					<td>Specifies the time to wait before starting the transition.</td>
+				</tr>
+				<tr>
+					<td>transition:</td>
+					<td>Shorthand for the four previous declarations (transition: property duration timing-function delay).</td>
+				</tr>
+				<tr>
+					<td>transition: all</td>
+					<td>Selects all the properties that will transition.</td>
+				</tr>
+				<tr>
+					<td><a target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties</a></td>
+					<td>List of all animated properties.</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</section>
+
+
+
+<!--Tips & Tricks-->
+	<section id="tips&tricks">
+		<h2>Tips and Tricks</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Link or snippet</th>
+					<th>Meaning</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a target="_blank">https://css-tricks.com/centering-css-complete-guide/</a></td>
+					<td>How to center all kinds of stuffs.</td>
+				</tr>
+				<tr>
+					<td><a target="_blank">https://www.youtube.com/watch?v=exb2ab72Xhs</a></td>
+					<td>Create an overlay hovering effect properly.</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+
+			</tbody>
+		</table>
+	</section>
+
+</main>
+</body>
+</html>
